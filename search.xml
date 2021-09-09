@@ -1,68 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Hexo picture test</title>
-      <link href="/2021/09/10/Hexo-picture-test/"/>
-      <url>/2021/09/10/Hexo-picture-test/</url>
-      
-        <content type="html"><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg" alt="worldmap"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Sharing </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo Blog</title>
-      <link href="/2021/09/10/Hexo-Blog/"/>
-      <url>/2021/09/10/Hexo-Blog/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Hexo-Installation"><a href="#Hexo-Installation" class="headerlink" title="Hexo Installation"></a><a href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2><ul><li><a href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">additional modules</a></li></ul><span id="more"></span><h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure><ul><li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li><li>follow the solution <a href="https://www.haoyizebo.com/posts/710984d0/">here</a></li></ul><h2 id="Add-algolia-search"><a href="#Add-algolia-search" class="headerlink" title="Add algolia search"></a>Add algolia search</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure><ul><li><p>go to <a href="https://www.algolia.com/">Algolia</a></p></li><li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p></li><li><p>three Keys: Search-Only, Admin, new_Key</p></li><li><p>one ID: Application ID</p></li></ul><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure><ul><li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Coding </tag>
-            
-            <tag> Self-Learning </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Init</title>
-      <link href="/2021/09/09/Init/"/>
-      <url>/2021/09/09/Init/</url>
-      
-        <content type="html"><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld!"></a>HelloWorld!</h2><span id="more"></span><p>Reading more test~</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Genesis </tag>
-            
-            <tag> Coding </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>Init</title>
+    <url>/2021/09/09/Init/</url>
+    <content><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld!"></a>HelloWorld!</h2><span id="more"></span>
+
+<p>Reading more test~</p>
+]]></content>
+      <tags>
+        <tag>Genesis</tag>
+        <tag>Coding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Blog</title>
+    <url>/2021/09/10/Hexo-Blog/</url>
+    <content><![CDATA[<h2 id="Hexo-Installation"><a href="#Hexo-Installation" class="headerlink" title="Hexo Installation"></a><a href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2><ul>
+<li><a href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">additional modules</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li>
+<li>follow the solution <a href="https://www.haoyizebo.com/posts/710984d0/">here</a></li>
+</ul>
+<h2 id="Add-algolia-search"><a href="#Add-algolia-search" class="headerlink" title="Add algolia search"></a>Add algolia search</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>go to <a href="https://www.algolia.com/">Algolia</a></p>
+</li>
+<li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p>
+</li>
+<li><p>three Keys: Search-Only, Admin, new_Key</p>
+</li>
+<li><p>one ID: Application ID</p>
+</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Coding</tag>
+        <tag>Self-Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo picture test</title>
+    <url>/2021/09/10/Hexo-picture-test/</url>
+    <content><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg" alt="worldmap"></p>
+]]></content>
+      <tags>
+        <tag>Sharing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阴阳师从零开始肝新区</title>
+    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</url>
+    <content><![CDATA[<h1 id="预约抽卡"><a href="#预约抽卡" class="headerlink" title="预约抽卡"></a>预约抽卡</h1><ul>
+<li><p>携带各阶式神，每日好友助力、分享助力</p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/%E9%A2%84%E7%BA%A6%E6%8A%BD%E5%8D%A1.png" alt="预约抽卡"></p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="开服后"><a href="#开服后" class="headerlink" title="开服后"></a>开服后</h1><h2 id="过新手任务（15级前）"><a href="#过新手任务（15级前）" class="headerlink" title="过新手任务（15级前）"></a>过新手任务（15级前）</h2><ul>
+<li>做任务提升等级；达成成就（不要觉醒雪女）；二号位有速度直接升级，让狗粮队长先行动</li>
+<li>砸百鬼（获得基础式神碎片：镰鼬，追月神，清姬，日和坊）</li>
+<li>组队经验；金币副本</li>
+<li>不抽卡！15级前不享受概率up</li>
+</ul>
+<h2 id="成长期（15级-30级）"><a href="#成长期（15级-30级）" class="headerlink" title="成长期（15级-30级）"></a>成长期（15级-30级）</h2><ul>
+<li>拜师（大号）<ul>
+<li>准备六星爆伤麓丸刷副本等级（先自己打到最高，然后使用师父的式神协战升级副本）</li>
+<li>开启协同任务</li>
+<li>每日师徒副本</li>
+<li>师父优先准备一个五星6号位暴击御魂；2号位速度御魂</li>
+<li>准备一套破势满暴击；针女满暴击</li>
+</ul>
+</li>
+<li>抽卡（拜师之后再抽，可完成师徒任务），看情况决定发展方向<ul>
+<li>三次概率up后，不抽卡，购买永久勾玉卡和御魂礼包</li>
+<li>没有上位替代式神，就准备兔子，座敷，铁鼠，丑女</li>
+</ul>
+</li>
+<li>过平安百物语</li>
+<li>低星御魂养御灵，神乐&gt;晴明&gt;八百&gt;源博雅</li>
+<li>斗技刷满积分；嫌麻烦进去<strong>直接退</strong>；斗技段位可提升荣誉获取<strong>上限</strong></li>
+<li>刷突破（回复体力，结界卡），一退一打保持多勋章状态</li>
+<li>购买永久勾玉卡（可后面再买）</li>
+<li>跟进活动（资源相对于常规要多很多）；具体操作待考察</li>
+</ul>
+<h1 id="资源获取"><a href="#资源获取" class="headerlink" title="资源获取"></a>资源获取</h1><h2 id="体力"><a href="#体力" class="headerlink" title="体力"></a><a href="https://www.bilibili.com/read/cv259232?spm_id_from=333.999.0.0">体力</a></h2><ul>
+<li>每日任务、12点/8点各20体</li>
+<li>悬赏封印</li>
+<li>探索副本及宝箱</li>
+<li>封魔之时四次点击，问答，当日boss，宝箱</li>
+<li>寮30、结界卡、体力食盒、寮补给8小时20体</li>
+<li>杂货铺勋章购买</li>
+<li>好友祝福</li>
+<li>当期大型活动</li>
+</ul>
+<h2 id="金币"><a href="#金币" class="headerlink" title="金币"></a><a href="https://www.bilibili.com/read/cv239659/">金币</a></h2><ul>
+<li>每日任务、签到、花合战、成就系统</li>
+<li>悬赏封印（重要），两万、三万</li>
+<li>金币大作战（周期活动）</li>
+<li>各类副本<ul>
+<li>金币副本</li>
+<li>师徒副本</li>
+<li>探索副本</li>
+<li>封魔四次点击，问答，小boss，当日boss，宝箱</li>
+<li>御灵、地鬼、麒麟、阴界、道馆、真蛇、平安奇谭</li>
+<li>结界突破</li>
+<li>业原火/日轮/魂水/石距/年兽（较多金币）</li>
+<li>每周竞速</li>
+<li>委派任务</li>
+<li>首领退治</li>
+</ul>
+</li>
+<li>阴阳寮<ul>
+<li>寮30任务、寮包、寮资金领取</li>
+<li>结界卡、寄养</li>
+</ul>
+</li>
+<li>式神协战、同心之兰、好友祝福</li>
+<li>PVP<ul>
+<li>斗技、协同斗技、斗技应援</li>
+</ul>
+</li>
+<li>御魂奉纳</li>
+<li>宠物配饰购买</li>
+<li>地域收集成就</li>
+<li>式神传记解锁</li>
+<li>新式神绘卷捐赠</li>
+<li>当期大型活动、节日礼包、商店礼包</li>
+</ul>
+<h2 id="勾玉"><a href="#勾玉" class="headerlink" title="勾玉"></a><a href="https://www.bilibili.com/read/cv274869?spm_id_from=333.999.0.0">勾玉</a></h2><ul>
+<li>每日任务、签到、花合战、成就系统</li>
+<li>悬赏封印</li>
+<li>协战50</li>
+<li>结界突破</li>
+<li>永久勾玉卡</li>
+<li>地域鬼王，每周分享</li>
+<li>百鬼弈</li>
+<li>结界卡</li>
+<li>秘闻副本，每周分享</li>
+<li>斗技、协同斗技</li>
+<li>真蛇通关</li>
+<li>黑蛋签到</li>
+<li>逢魔之时boss、宝箱、答题、小boss</li>
+<li>御魂奉纳</li>
+<li>大蛇副本，秋田犬每日奖励</li>
+<li>好友祝福</li>
+<li>地域收集</li>
+<li>当期大型活动</li>
+<li>式神委派</li>
+<li>御祝</li>
+<li>平安百物语</li>
+<li>探索副本（偶然获得）</li>
+<li>式神传记</li>
+<li>皮肤分享</li>
+<li>召回好友，总计1000</li>
+<li>绑定手机</li>
+<li>新式神绘卷捐赠</li>
+</ul>
+<h2 id="蓝票"><a href="#蓝票" class="headerlink" title="蓝票"></a><a href="https://www.bilibili.com/video/BV1Gf4y1a7it?from=search&seid=4162949903203472266&spm_id_from=333.337.0.0">蓝票</a></h2><ul>
+<li>勋章商店</li>
+<li>荣誉商店</li>
+<li>寮商店</li>
+<li>每周图鉴分享</li>
+<li>每月神秘图案</li>
+<li>平安奇谭</li>
+<li>各种副本概率获取</li>
+</ul>
+<h1 id="达摩使用"><a href="#达摩使用" class="headerlink" title="达摩使用"></a>达摩使用</h1><p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/%E8%BE%BE%E6%91%A9%E4%BD%BF%E7%94%A8.png" alt="达摩使用"></p>
+<ul>
+<li>现在由于有一键育成，只需要把蓝蛋养成到13级即可经验收益最大化（因为蓝蛋升级需要消耗经验，提供与消耗差值最大时是13级）</li>
+<li>保持三星满级白蛋30个以上（直接从这个等级的白蛋开始消耗，不需要将低星白蛋再养起来消耗经验与狗粮）</li>
+<li>以上两点都需手动解决</li>
+</ul>
+<h1 id="地鬼声望获取"><a href="#地鬼声望获取" class="headerlink" title="地鬼声望获取"></a>地鬼声望获取</h1><ul>
+<li>微博ID: 想成为大佬的竹会</li>
+<li>刷前三、前百、前三百获得高声望，随缘吧</li>
+<li>或者找词条苛刻的地鬼，蝠翼麓丸一拖四</li>
+</ul>
+<h1 id="副本阵容准备"><a href="#副本阵容准备" class="headerlink" title="副本阵容准备"></a>副本阵容准备</h1><h2 id="魂一至魂十、麒麟一至十"><a href="#魂一至魂十、麒麟一至十" class="headerlink" title="魂一至魂十、麒麟一至十"></a>魂一至魂十、麒麟一至十</h2><ul>
+<li>刷好友羁绊150，第二天可借用师父式神协战</li>
+<li>师父准备一只70暴击狂歌不知火</li>
+<li>徒弟尽自己所能刷到高等级副本，再协战</li>
+<li>通过之后可组队刷</li>
+</ul>
+<h2 id="魂土"><a href="#魂土" class="headerlink" title="魂土"></a>魂土</h2><ul>
+<li>开启魂土需要通过前置挑战</li>
+<li>一层大蛇，四拉条/推条+输出</li>
+<li><a href="https://www.bilibili.com/video/BV1cE411j7UQ/?spm_id_from=333.788.recommend_more_video.-1">二层晴明</a></li>
+</ul>
+<h2 id="真蛇"><a href="#真蛇" class="headerlink" title="真蛇"></a>真蛇</h2><p>两人组队一人七个单位，同时在场3个单位</p>
+<ul>
+<li>师父：<ul>
+<li>速生爆蚌精吞</li>
+<li>镇墓兽/针女+歌姬小黑</li>
+<li>心眼麓丸</li>
+<li>备用针女歌姬sp花</li>
+<li>速生爆蚌精吞2</li>
+</ul>
+</li>
+<li>徒弟<ul>
+<li>210+速招财/火灵兔*2</li>
+<li>火灵辉夜姬/座敷*2，生生生</li>
+<li>白蛋*3，散件生生生</li>
+<li>晴明锁盾</li>
+</ul>
+</li>
+</ul>
+<h2 id="魂水"><a href="#魂水" class="headerlink" title="魂水"></a>魂水</h2><ul>
+<li>p1 萤帝火修烬</li>
+<li><a href="https://www.bilibili.com/video/BV1u5411u7qL?from=search&seid=14286783005658243467&spm_id_from=333.337.0.0">p2</a></li>
+</ul>
+<h2 id="日轮之陨"><a href="#日轮之陨" class="headerlink" title="日轮之陨"></a>日轮之陨</h2><ul>
+<li><a href="https://nga.178.com/read.php?tid=25452942&rand=35">具体计算原理</a></li>
+<li>搭配方式：<a href="https://bbs.nga.cn/read.php?tid=23251576">御魂导出器</a> + <a href="https://yuhunhub.tql8.com/">御魂hub</a><ul>
+<li>选择<code>公共预设</code>$\rightarrow$<code>御魂</code> $\rightarrow$<code>日轮</code>$\rightarrow$<code>日轮16s丑缘铁玉茨（破荒玉）</code></li>
+<li>依次计算、收藏、排除套装得到结果</li>
+</ul>
+</li>
+<li>组队需小号按照面板配置御魂</li>
+</ul>
+<h2 id="师徒任务"><a href="#师徒任务" class="headerlink" title="师徒任务"></a><a href="https://www.bilibili.com/video/BV1TK411c76C">师徒任务</a></h2><ul>
+<li>操作细节参考视频</li>
+<li>师徒副本阵容修烬晴烬火铁</li>
+</ul>
+<h2 id="金币、经验副本"><a href="#金币、经验副本" class="headerlink" title="金币、经验副本"></a>金币、经验副本</h2><ul>
+<li>烬/06+琴琴灯辉</li>
+<li>一定记得开加成！</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>阴阳师</tag>
+        <tag>攻略</tag>
+      </tags>
+  </entry>
 </search>
