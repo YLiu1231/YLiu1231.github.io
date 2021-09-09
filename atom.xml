@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>I Know Nothing</title>
+  <icon>https://cnxiekun.github.io/icon.png</icon>
+  
+  <link href="https://cnxiekun.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://cnxiekun.github.io/"/>
+  <updated>2021-09-09T14:04:34.267Z</updated>
+  <id>https://cnxiekun.github.io/</id>
+  
+  <author>
+    <name>Yulin LIU</name>
+    <email>yliufi@connect.ust.hk</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Init</title>
+    <link href="https://cnxiekun.github.io/2021/09/09/Init/"/>
+    <id>https://cnxiekun.github.io/2021/09/09/Init/</id>
+    <published>2021-09-09T13:01:59.000Z</published>
+    <updated>2021-09-09T14:04:34.267Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;HelloWorld&quot;&gt;&lt;a href=&quot;#HelloWorld&quot; class=&quot;headerlink&quot; title=&quot;HelloWorld!&quot;&gt;&lt;/a&gt;HelloWorld!&lt;/h2&gt;</summary>
+    
+    
+    
+    
+    <category term="Genesis" scheme="https://cnxiekun.github.io/tags/Genesis/"/>
+    
+    <category term="Coding" scheme="https://cnxiekun.github.io/tags/Coding/"/>
+    
+  </entry>
+  
+</feed>
