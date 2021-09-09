@@ -24,10 +24,12 @@
     <updated>2021-09-09T20:52:33.416Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;预约抽卡&quot;&gt;&lt;a href=&quot;#预约抽卡&quot; class=&quot;headerlink&quot; title=&quot;预约抽卡&quot;&gt;&lt;/a&gt;预约抽卡&lt;/h1&gt;&lt;ul&gt;
+    <summary type="html">&lt;h1 id=&quot;预约抽卡&quot;&gt;预约抽卡&lt;/h1&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;携带各阶式神，每日好友助力、分享助力&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/%E9%A2%84%E7%BA%A6%E6%8A%BD%E5%8D%A1.png&quot; alt=&quot;预约抽卡&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png&quot; alt=&quot;预约抽卡&quot; /&gt;&lt;figcaption aria-hidden=&quot;true&quot;&gt;预约抽卡&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary>
     
     
@@ -51,7 +53,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2021/09/10/Hexo-picture-test/worldmap.jpeg&quot;</summary>
+    <summary type="html">&lt;figure&gt;
+&lt;img src=&quot;/2021/09/10/Hexo-picture-test/worldmap.jpeg&quot; alt=&quot;worldmap&quot; /&gt;&lt;figcaption</summary>
         
       
     
@@ -67,10 +70,11 @@
     <link href="https://cnxiekun.github.io/2021/09/10/Hexo-Blog/"/>
     <id>https://cnxiekun.github.io/2021/09/10/Hexo-Blog/</id>
     <published>2021-09-09T16:28:12.000Z</published>
-    <updated>2021-09-09T16:29:15.662Z</updated>
+    <updated>2021-09-09T21:46:43.093Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;Hexo-Installation&quot;&gt;&lt;a href=&quot;#Hexo-Installation&quot; class=&quot;headerlink&quot; title=&quot;Hexo Installation&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo Installation&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+    <summary type="html">&lt;h2 id=&quot;hexo-installation&quot;&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo Installation&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&quot;&gt;additional modules&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary>
     
@@ -91,7 +95,7 @@
     <updated>2021-09-09T14:04:34.267Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;HelloWorld&quot;&gt;&lt;a href=&quot;#HelloWorld&quot; class=&quot;headerlink&quot; title=&quot;HelloWorld!&quot;&gt;&lt;/a&gt;HelloWorld!&lt;/h2&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;helloworld&quot;&gt;HelloWorld!&lt;/h2&gt;</summary>
     
     
     
