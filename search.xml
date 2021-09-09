@@ -3,8 +3,8 @@
   <entry>
     <title>Init</title>
     <url>/2021/09/09/Init/</url>
-    <content><![CDATA[<h2 id="helloworld">HelloWorld!</h2>
-<span id="more"></span>
+    <content><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld!"></a>HelloWorld!</h2><span id="more"></span>
+
 <p>Reading more test~</p>
 ]]></content>
       <tags>
@@ -54,9 +54,7 @@
   <entry>
     <title>Hexo picture test</title>
     <url>/2021/09/10/Hexo-picture-test/</url>
-    <content><![CDATA[<figure>
-<img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg" alt="worldmap" /><figcaption aria-hidden="true">worldmap</figcaption>
-</figure>
+    <content><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg" /></p>
 ]]></content>
       <tags>
         <tag>Sharing</tag>
@@ -68,9 +66,7 @@
     <content><![CDATA[<h1 id="预约抽卡">预约抽卡</h1>
 <ul>
 <li><p>携带各阶式神，每日好友助力、分享助力</p>
-<figure>
-<img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png" alt="预约抽卡" /><figcaption aria-hidden="true">预约抽卡</figcaption>
-</figure></li>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png" /></p></li>
 </ul>
 <span id="more"></span>
 <h1 id="开服后">开服后</h1>
@@ -191,9 +187,7 @@
 <li>各种副本概率获取</li>
 </ul>
 <h1 id="达摩使用">达摩使用</h1>
-<figure>
-<img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png" alt="达摩使用" /><figcaption aria-hidden="true">达摩使用</figcaption>
-</figure>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png" /></p>
 <ul>
 <li>现在由于有一键育成，只需要把蓝蛋养成到13级即可经验收益最大化（因为蓝蛋升级需要消耗经验，提供与消耗差值最大时是13级）</li>
 <li>保持三星满级白蛋30个以上（直接从这个等级的白蛋开始消耗，不需要将低星白蛋再养起来消耗经验与狗粮）</li>

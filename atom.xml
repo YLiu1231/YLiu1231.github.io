@@ -6,7 +6,7 @@
   <link href="https://cnxiekun.github.io/atom.xml" rel="self"/>
   
   <link href="https://cnxiekun.github.io/"/>
-  <updated>2021-09-09T20:52:33.416Z</updated>
+  <updated>2021-09-09T21:58:01.652Z</updated>
   <id>https://cnxiekun.github.io/</id>
   
   <author>
@@ -21,15 +21,13 @@
     <link href="https://cnxiekun.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/"/>
     <id>https://cnxiekun.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</id>
     <published>2021-09-09T20:38:10.000Z</published>
-    <updated>2021-09-09T20:52:33.416Z</updated>
+    <updated>2021-09-09T21:58:01.652Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;预约抽卡&quot;&gt;预约抽卡&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;携带各阶式神，每日好友助力、分享助力&lt;/p&gt;
-&lt;figure&gt;
-&lt;img src=&quot;/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png&quot; alt=&quot;预约抽卡&quot; /&gt;&lt;figcaption aria-hidden=&quot;true&quot;&gt;预约抽卡&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png&quot; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary>
     
     
@@ -46,15 +44,14 @@
     <link href="https://cnxiekun.github.io/2021/09/10/Hexo-picture-test/"/>
     <id>https://cnxiekun.github.io/2021/09/10/Hexo-picture-test/</id>
     <published>2021-09-09T16:47:43.000Z</published>
-    <updated>2021-09-09T17:08:07.200Z</updated>
+    <updated>2021-09-09T21:58:37.885Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;figure&gt;
-&lt;img src=&quot;/2021/09/10/Hexo-picture-test/worldmap.jpeg&quot; alt=&quot;worldmap&quot; /&gt;&lt;figcaption</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2021/09/10/Hexo-picture-test/worldmap.jpeg&quot;</summary>
         
       
     
@@ -95,7 +92,7 @@
     <updated>2021-09-09T14:04:34.267Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;helloworld&quot;&gt;HelloWorld!&lt;/h2&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;HelloWorld&quot;&gt;&lt;a href=&quot;#HelloWorld&quot; class=&quot;headerlink&quot; title=&quot;HelloWorld!&quot;&gt;&lt;/a&gt;HelloWorld!&lt;/h2&gt;</summary>
     
     
     
