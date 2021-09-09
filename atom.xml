@@ -6,7 +6,7 @@
   <link href="https://cnxiekun.github.io/atom.xml" rel="self"/>
   
   <link href="https://cnxiekun.github.io/"/>
-  <updated>2021-09-09T14:04:34.267Z</updated>
+  <updated>2021-09-09T16:50:49.515Z</updated>
   <id>https://cnxiekun.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo picture test</title>
+    <link href="https://cnxiekun.github.io/2021/09/10/Hexo-picture-test/"/>
+    <id>https://cnxiekun.github.io/2021/09/10/Hexo-picture-test/</id>
+    <published>2021-09-09T16:47:43.000Z</published>
+    <updated>2021-09-09T16:50:49.515Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;2021-09-10-Hexo-picture-test/worldmap.jpeg&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Sharing" scheme="https://cnxiekun.github.io/tags/Sharing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Blog</title>
+    <link href="https://cnxiekun.github.io/2021/09/10/Hexo-Blog/"/>
+    <id>https://cnxiekun.github.io/2021/09/10/Hexo-Blog/</id>
+    <published>2021-09-09T16:28:12.000Z</published>
+    <updated>2021-09-09T16:29:15.662Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Hexo-Installation&quot;&gt;&lt;a href=&quot;#Hexo-Installation&quot; class=&quot;headerlink&quot; title=&quot;Hexo Installation&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo Installation&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&quot;&gt;additional modules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="Coding" scheme="https://cnxiekun.github.io/tags/Coding/"/>
+    
+    <category term="Self-Learning" scheme="https://cnxiekun.github.io/tags/Self-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Init</title>

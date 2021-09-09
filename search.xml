@@ -12,4 +12,52 @@
         <tag>Coding</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo Blog</title>
+    <url>/2021/09/10/Hexo-Blog/</url>
+    <content><![CDATA[<h2 id="Hexo-Installation"><a href="#Hexo-Installation" class="headerlink" title="Hexo Installation"></a><a href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2><ul>
+<li><a href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">additional modules</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li>
+<li>follow the solution <a href="https://www.haoyizebo.com/posts/710984d0/">here</a></li>
+</ul>
+<h2 id="Add-algolia-search"><a href="#Add-algolia-search" class="headerlink" title="Add algolia search"></a>Add algolia search</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>go to <a href="https://www.algolia.com/">Algolia</a></p>
+</li>
+<li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p>
+</li>
+<li><p>three Keys: Search-Only, Admin, new_Key</p>
+</li>
+<li><p>one ID: Application ID</p>
+</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Coding</tag>
+        <tag>Self-Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo picture test</title>
+    <url>/2021/09/10/Hexo-picture-test/</url>
+    <content><![CDATA[<p><img src="2021-09-10-Hexo-picture-test/worldmap.jpeg" alt="worldmap"></p>
+]]></content>
+      <tags>
+        <tag>Sharing</tag>
+      </tags>
+  </entry>
 </search>
