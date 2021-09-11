@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"cnxiekun.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"E90O4G39GT","apiKey":"437253e7fd9ee35ea1ab99aacca8fe45","indexName":"yliu1231","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":{"position":"slideLeftIn","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false}}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hexo Installation  additional modules">
+  <meta name="description" content="Hexo Installation additional modules">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Blog">
 <meta property="og:url" content="https://cnxiekun.github.io/2021/09/10/Hexo-Blog/index.html">
 <meta property="og:site_name" content="I Know Nothing">
-<meta property="og:description" content="Hexo Installation  additional modules">
+<meta property="og:description" content="Hexo Installation additional modules">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-09T16:28:12.000Z">
 <meta property="article:modified_time" content="2021-09-11T05:22:49.144Z">
@@ -282,42 +282,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="hexo-installation"><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2>
-<ul>
+        <h2 id="Hexo-Installation"><a href="#Hexo-Installation" class="headerlink" title="Hexo Installation"></a><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2><ul>
 <li><a href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">additional modules</a></li>
 </ul>
 <span id="more"></span>
-<h2 id="setup">Setup</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li>
 <li>follow the solution <a target="_blank" rel="noopener" href="https://www.haoyizebo.com/posts/710984d0/">here</a></li>
 </ul>
-<h2 id="add-algolia-search">Add algolia search</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+<h2 id="Add-algolia-search"><a href="#Add-algolia-search" class="headerlink" title="Add algolia search"></a>Add algolia search</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><p>go to <a target="_blank" rel="noopener" href="https://www.algolia.com/">Algolia</a></p></li>
-<li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p></li>
-<li><p>three Keys: Search-Only, Admin, new_Key</p></li>
-<li><p>one ID: Application ID</p></li>
+<li><p>go to <a target="_blank" rel="noopener" href="https://www.algolia.com/">Algolia</a></p>
+</li>
+<li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p>
+</li>
+<li><p>three Keys: Search-Only, Admin, new_Key</p>
+</li>
+<li><p>one ID: Application ID</p>
+</li>
 </ul>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li>
 </ul>
-<h2 id="add-favicon">Add favicon</h2>
-<ul>
+<h2 id="Add-favicon"><a href="#Add-favicon" class="headerlink" title="Add favicon"></a>Add favicon</h2><ul>
 <li>open <a target="_blank" rel="noopener" href="https://www.favicon-generator.org/">web</a></li>
 <li>select pic and generate</li>
 <li>rename the pic files to match the theme config (not site config)</li>
 </ul>
-<h2 id="multi-font">Multi-font</h2>
-<ul>
+<h2 id="Multi-font"><a href="#Multi-font" class="headerlink" title="Multi-font"></a>Multi-font</h2><ul>
 <li>follow <a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Fonts-Customization">web</a></li>
 </ul>
-<h2 id="photo-gallery">Photo Gallery</h2>
-<ul>
+<h2 id="Photo-Gallery"><a href="#Photo-Gallery" class="headerlink" title="Photo Gallery"></a>Photo Gallery</h2><ul>
 <li>follow <a target="_blank" rel="noopener" href="https://co5.me/2018/181112-gallerry2.html">css+markdown 实现 hexo 相册【进阶篇】</a></li>
 </ul>
 
@@ -405,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-installation"><span class="nav-number">1.</span> <span class="nav-text">Hexo Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setup"><span class="nav-number">2.</span> <span class="nav-text">Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-algolia-search"><span class="nav-number">3.</span> <span class="nav-text">Add algolia search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-favicon"><span class="nav-number">4.</span> <span class="nav-text">Add favicon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-font"><span class="nav-number">5.</span> <span class="nav-text">Multi-font</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#photo-gallery"><span class="nav-number">6.</span> <span class="nav-text">Photo Gallery</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Installation"><span class="nav-number">1.</span> <span class="nav-text">Hexo Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Setup"><span class="nav-number">2.</span> <span class="nav-text">Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-algolia-search"><span class="nav-number">3.</span> <span class="nav-text">Add algolia search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-favicon"><span class="nav-number">4.</span> <span class="nav-text">Add favicon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-font"><span class="nav-number">5.</span> <span class="nav-text">Multi-font</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photo-Gallery"><span class="nav-number">6.</span> <span class="nav-text">Photo Gallery</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
