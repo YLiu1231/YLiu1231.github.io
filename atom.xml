@@ -6,7 +6,7 @@
   <link href="https://cnxiekun.github.io/atom.xml" rel="self"/>
   
   <link href="https://cnxiekun.github.io/"/>
-  <updated>2021-09-11T04:58:25.957Z</updated>
+  <updated>2021-09-11T05:48:40.355Z</updated>
   <id>https://cnxiekun.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo video test</title>
+    <link href="https://cnxiekun.github.io/2021/09/11/Hexo-video-test/"/>
+    <id>https://cnxiekun.github.io/2021/09/11/Hexo-video-test/</id>
+    <published>2021-09-11T05:29:30.000Z</published>
+    <updated>2021-09-11T05:48:40.355Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;taeyeon-concert---the-unseen&quot;&gt;Taeyeon Concert - THE UNSEEN&lt;/h2&gt;
+&lt;iframe</summary>
+        
+      
+    
+    
+    
+    <category term="Tech" scheme="https://cnxiekun.github.io/categories/Tech/"/>
+    
+    
+    <category term="SNSD" scheme="https://cnxiekun.github.io/tags/SNSD/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo pdf test</title>
@@ -164,7 +190,7 @@
     <link href="https://cnxiekun.github.io/2021/09/10/Hexo-Blog/"/>
     <id>https://cnxiekun.github.io/2021/09/10/Hexo-Blog/</id>
     <published>2021-09-09T16:28:12.000Z</published>
-    <updated>2021-09-11T04:56:21.401Z</updated>
+    <updated>2021-09-11T05:22:49.144Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;hexo-installation&quot;&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo Installation&lt;/a&gt;&lt;/h2&gt;
