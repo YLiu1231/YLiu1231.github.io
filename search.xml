@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Init</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/09/Init/</url>
-    <content><![CDATA[<h2 id="helloworld">HelloWorld!</h2>
-<span id="more"></span>
-<p>Reading more test~</p>
-]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
-      <tags>
-        <tag>Genesis</tag>
-        <tag>Coding</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Blog</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/10/Hexo-Blog/</url>
+    <url>/2021/09/10/Hexo-Blog/</url>
     <content><![CDATA[<h2 id="hexo-installation"><a href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2>
 <ul>
 <li><a href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">additional modules</a></li>
@@ -66,9 +51,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Init</title>
+    <url>/2021/09/09/Init/</url>
+    <content><![CDATA[<h2 id="helloworld">HelloWorld!</h2>
+<span id="more"></span>
+<p>Reading more test~</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Coding</tag>
+        <tag>Genesis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo picture test</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/10/Hexo-picture-test/</url>
-    <content><![CDATA[<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/Hexo-picture-test/worldmap.jpeg" /></p>
+    <url>/2021/09/10/Hexo-picture-test/</url>
+    <content><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg" /></p>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -79,9 +79,9 @@
   </entry>
   <entry>
     <title>用来摸鱼的座位就是要舒服一点</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/</url>
+    <url>/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/</url>
     <content><![CDATA[<h1 id="展示">0. 展示</h1>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/main.jpeg" /></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/main.jpeg" /></p>
 <span id="more"></span>
 <h1 id="桌面配置介绍">1. 桌面配置介绍</h1>
 <ul>
@@ -153,9 +153,9 @@
 <p><em>其实一个设备连接两个显示器时，关掉主显示器，则副显示器自动变为主显示器，所以可以连续切换主显示器两次</em></p>
 <p>不使用脚本时，则需要手动按下显示器上的控制键选择相应输入源（感觉不太优雅，师兄弟看到的时候不帅）</p>
 <h1 id="其他角度展示">4.其他角度展示</h1>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side1.jpeg" /></p>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side2.jpeg" /></p>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side3.jpeg" /></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side1.jpeg" /></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side2.jpeg" /></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side3.jpeg" /></p>
 <h3 id="ps">PS</h3>
 <ol start="0" type="1">
 <li><p>两个显示器是跟老板做了两个项目得的，感恩~</p></li>
@@ -188,11 +188,11 @@
   </entry>
   <entry>
     <title>阴阳师从零开始肝新区</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</url>
+    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</url>
     <content><![CDATA[<h1 id="预约抽卡">预约抽卡</h1>
 <ul>
 <li><p>携带各阶式神，每日好友助力、分享助力</p>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png" /></p></li>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png" /></p></li>
 </ul>
 <span id="more"></span>
 <h1 id="开服后">开服后</h1>
@@ -313,7 +313,7 @@
 <li>各种副本概率获取</li>
 </ul>
 <h1 id="达摩使用">达摩使用</h1>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png" /></p>
 <ul>
 <li>现在由于有一键育成，只需要把蓝蛋养成到13级即可经验收益最大化（因为蓝蛋升级需要消耗经验，提供与消耗差值最大时是13级）</li>
 <li>保持三星满级白蛋30个以上（直接从这个等级的白蛋开始消耗，不需要将低星白蛋再养起来消耗经验与狗粮）</li>
@@ -394,9 +394,9 @@
   </entry>
   <entry>
     <title>阴阳师副本业原火-御灵-图像识别</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
+    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg" /></p>
 <span id="more"></span>
 <h1 id="前言">前言</h1>
 <ul>
@@ -446,12 +446,12 @@
 <ul>
 <li>目标图样</li>
 </ul>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg" /></p>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg" /></p>
 <ul>
 <li>截图</li>
 </ul>
-<p><img src="/YLiu1231/yliu1231.github.io/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg" /></p>
 ]]></content>
       <categories>
         <category>Game</category>
@@ -465,7 +465,7 @@
   </entry>
   <entry>
     <title>Hexo pdf test</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/11/Hexo-pdf-test/</url>
+    <url>/2021/09/11/Hexo-pdf-test/</url>
     <content><![CDATA[<p>HKUST COMP 5712 Notes.</p>
 <span id="more"></span>
 <iframe src="/pdf/cs261.pdf" width="110%" height="1100px">
@@ -482,7 +482,7 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
   </entry>
   <entry>
     <title>Hexo video test</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/11/Hexo-video-test/</url>
+    <url>/2021/09/11/Hexo-video-test/</url>
     <content><![CDATA[<h2 id="taeyeon-concert---the-unseen">Taeyeon Concert - THE UNSEEN</h2>
 <iframe src="//player.bilibili.com/player.html?aid=243717657&amp;bvid=BV1mv411B7KK&amp;cid=282334437&amp;page=1&amp;high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%" danmuku="1">
 </iframe>
@@ -496,7 +496,7 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
   </entry>
   <entry>
     <title>隔离注意事项</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/11/%E9%9A%94%E7%A6%BB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <url>/2021/09/11/%E9%9A%94%E7%A6%BB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
     <content><![CDATA[<ul>
 <li><p>两地转换插头若干</p></li>
 <li><p>水、食物若干（多次连续12小时以上无饮食供给，有些酒店甚至不提供饮用水，有条件准备便携滤水装置）</p></li>
@@ -530,7 +530,7 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
   </entry>
   <entry>
     <title>四年前的检讨书</title>
-    <url>/YLiu1231/yliu1231.github.io/2021/09/12/%E5%9B%9B%E5%B9%B4%E5%89%8D%E7%9A%84%E6%A3%80%E8%AE%A8%E4%B9%A6/</url>
+    <url>/2021/09/12/%E5%9B%9B%E5%B9%B4%E5%89%8D%E7%9A%84%E6%A3%80%E8%AE%A8%E4%B9%A6/</url>
     <content><![CDATA[<p>上一篇检讨书是深夜写的，写到后面已经十分困倦，许多话都是一带而过，整篇结构显得头重脚轻，跑题严重。现在看来，不该急于写完，应该一点一点，仔细剖析自己的现状。</p>
 <span id="more"></span>
 <p>​ 一开始想说清楚的就是我“嘚瑟”的本质。一句话来说就是，我肆意地释放了自己的情绪。我并不是，也永远不会因为自己的学业、项目、奖学金之类的事情而向别人夸耀、显摆自己。但是一些过往的原因，让我心中仍然存留着劣质的、可笑的一点点优越感，我也一直小心翼翼地克制着。再有就是，我现在确实不太清楚社会就业、薪资的现状。读了博士，接触的人群变化了，我就觉得社会大众的定义向他们偏移。然而，各城市的人均薪资着实让我感到十分吃惊，这种吃惊源于我对基本劳动力价值的高估。大家只要努力奋斗，生活都会好起来的，但大家出发点的差异还是很残酷。</p>
