@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Init</title>
+    <url>/2021/09/09/Init/</url>
+    <content><![CDATA[<h2 id="helloworld">HelloWorld!</h2>
+<span id="more"></span>
+<p>Reading more test~</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Genesis</tag>
+        <tag>Coding</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Blog</title>
     <url>/2021/09/10/Hexo-Blog/</url>
     <content><![CDATA[<h2 id="hexo-installation"><a href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2>
@@ -48,21 +63,6 @@
       <tags>
         <tag>Coding</tag>
         <tag>Self-Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Init</title>
-    <url>/2021/09/09/Init/</url>
-    <content><![CDATA[<h2 id="helloworld">HelloWorld!</h2>
-<span id="more"></span>
-<p>Reading more test~</p>
-]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
-      <tags>
-        <tag>Coding</tag>
-        <tag>Genesis</tag>
       </tags>
   </entry>
   <entry>
