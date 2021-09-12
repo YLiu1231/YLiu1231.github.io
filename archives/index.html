@@ -206,13 +206,33 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 9 篇日志。 继续努力。</span>
+        <span class="collection-header">嗯..! 目前共计 10 篇日志。 继续努力。</span>
       </div>
 
       
     <div class="collection-year">
       <span class="collection-header">2021</span>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-09-12T16:52:33+08:00"
+              content="2021-09-12">
+          09-12
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/09/12/%E5%9B%9B%E5%B9%B4%E5%89%8D%E7%9A%84%E6%A3%80%E8%AE%A8%E4%B9%A6/" itemprop="url">
+            <span itemprop="name">四年前的检讨书</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -459,7 +479,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Yulin LIU"
-      src="/images/avatar.JPG">
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Yulin LIU</p>
   <div class="site-description" itemprop="description">Stay Happy and Healthy !</div>
 </div>
@@ -468,7 +488,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -481,7 +501,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -552,8 +572,6 @@
 <script src="/js/next-boot.js"></script>
 
 
-  <script defer src="/lib/three/three.min.js"></script>
-    <script defer src="/lib/three/three-waves.min.js"></script>
 
 
   
@@ -660,7 +678,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
     });
@@ -671,7 +689,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       appId      : 'wgIaib56XPioi8AShdp4zEnx-MdYXbMMI',
       appKey     : 'xXV0Y1CFHP4TAaih2Pixnl16',
       placeholder: "欢迎和我互动～",
-      avatar     : '/images/avatar.jpg',
+      avatar     : 'retro',
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : true,
@@ -686,3 +704,6 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 
 </body>
 </html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
