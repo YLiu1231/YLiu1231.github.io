@@ -24,21 +24,21 @@
 </ul>
 <span id="more"></span>
 <h2 id="setup">Setup</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li>
 <li>follow the solution <a href="https://www.haoyizebo.com/posts/710984d0/">here</a></li>
 </ul>
 <h2 id="add-algolia-search">Add algolia search</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li><p>go to <a href="https://www.algolia.com/">Algolia</a></p></li>
 <li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p></li>
 <li><p>three Keys: Search-Only, Admin, new_Key</p></li>
 <li><p>one ID: Application ID</p></li>
 </ul>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li>
 </ul>
@@ -68,7 +68,7 @@
   <entry>
     <title>Hexo picture test</title>
     <url>/2021/09/10/Hexo-picture-test/</url>
-    <content><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg" /></p>
+    <content><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg"></p>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -81,7 +81,7 @@
     <title>用来摸鱼的座位就是要舒服一点</title>
     <url>/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/</url>
     <content><![CDATA[<h1 id="展示">0. 展示</h1>
-<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/main.jpeg" /></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/main.jpeg"></p>
 <span id="more"></span>
 <h1 id="桌面配置介绍">1. 桌面配置介绍</h1>
 <ul>
@@ -144,18 +144,18 @@
 <h1 id="显示器输入的切换">3.显示器输入的切换</h1>
 <h2 id="mac转pc">MAC转PC</h2>
 <p>参考 https://github.com/kfix/ddcctl，安装时设定显卡为intel，在命令行输入</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ddcctl -d 1 -i 16</span><br><span class="line">ddcctl -d 2 -i 16</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">ddcctl -d 1 -i 16</span><br><span class="line">ddcctl -d 2 -i 16</span><br></pre></td></tr></tbody></table></figure>
 <p>则可以切换主/副显示器输入源到miniDP</p>
 <h2 id="pc转mac">PC转MAC</h2>
 <p>下载<a href="https://www.dell.com/support/home/hk/zh/hkbsd1/drivers/driversdetails?driverid=yr19y">Dell Display Manager</a>，安装<a href="https://www.autohotkey.com/">AutoHotKey</a>，使用脚本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">^F1::</span><br><span class="line">    Run, &quot;C:\Program Files (x86)\Dell\Dell Display Manager\ddm.exe&quot; /1:SetActiveInput DP </span><br><span class="line">Return</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">^F1::</span><br><span class="line">    Run, "C:\Program Files (x86)\Dell\Dell Display Manager\ddm.exe" /1:SetActiveInput DP </span><br><span class="line">Return</span><br></pre></td></tr></tbody></table></figure>
 <p>按下<code>control+F1</code>的组合键可将输入源转换为DP</p>
 <p><em>其实一个设备连接两个显示器时，关掉主显示器，则副显示器自动变为主显示器，所以可以连续切换主显示器两次</em></p>
 <p>不使用脚本时，则需要手动按下显示器上的控制键选择相应输入源（感觉不太优雅，师兄弟看到的时候不帅）</p>
 <h1 id="其他角度展示">4.其他角度展示</h1>
-<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side1.jpeg" /></p>
-<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side2.jpeg" /></p>
-<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side3.jpeg" /></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side1.jpeg"></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side2.jpeg"></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side3.jpeg"></p>
 <h3 id="ps">PS</h3>
 <ol start="0" type="1">
 <li><p>两个显示器是跟老板做了两个项目得的，感恩~</p></li>
@@ -192,7 +192,7 @@
     <content><![CDATA[<h1 id="预约抽卡">预约抽卡</h1>
 <ul>
 <li><p>携带各阶式神，每日好友助力、分享助力</p>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png" /></p></li>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png"></p></li>
 </ul>
 <span id="more"></span>
 <h1 id="开服后">开服后</h1>
@@ -313,7 +313,7 @@
 <li>各种副本概率获取</li>
 </ul>
 <h1 id="达摩使用">达摩使用</h1>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png"></p>
 <ul>
 <li>现在由于有一键育成，只需要把蓝蛋养成到13级即可经验收益最大化（因为蓝蛋升级需要消耗经验，提供与消耗差值最大时是13级）</li>
 <li>保持三星满级白蛋30个以上（直接从这个等级的白蛋开始消耗，不需要将低星白蛋再养起来消耗经验与狗粮）</li>
@@ -396,7 +396,7 @@
     <title>阴阳师副本业原火-御灵-图像识别</title>
     <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg"></p>
 <span id="more"></span>
 <h1 id="前言">前言</h1>
 <ul>
@@ -409,30 +409,30 @@
 </ul>
 <h1 id="正文">正文</h1>
 <h3 id="定位阴阳师客户端位置">定位阴阳师客户端位置</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u&#x27;阴阳师-网易游戏&#x27;</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u'阴阳师-网易游戏'</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>实操时发现，得到的四边坐标与真实位置有细微偏差，需要修正</li>
 </ul>
 <h3 id="获取当前阴阳师界面图像">获取当前阴阳师界面图像</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">&#x27;img/screenshot.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">'img/screenshot.jpg'</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="使用open-cv进行图像处理">使用open-cv进行图像处理</h3>
 <h4 id="读取截图">读取截图</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">&#x27;img/screenshot.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">'img/screenshot.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="提取特征数值">提取特征数值</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="构建匹配模型">构建匹配模型</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="获取满足条件的特征点">获取满足条件的特征点</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>当特征点数量达到阈值，则说明匹配成功</li>
 </ul>
 <h4 id="定位特征点在前后坐标系的位置计算变换矩阵">定位特征点在前后坐标系的位置，计算变换矩阵</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="根据模板四个角的坐标获得可行域">根据模板四个角的坐标获得可行域</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="点击区域内的随机坐标并移动到随机区域">点击区域内的随机坐标，并移动到随机区域</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">&#x27;left&#x27;</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">'left'</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="总结">总结</h2>
 <ul>
 <li>有了图像识别就不需要像一般科学工具一样卡副本时间，不会遇到翻车情况时盲目点击（业原火现在最稳定的阵容20s，但仍有概率舅妈收尾失败）</li>
@@ -446,12 +446,12 @@
 <ul>
 <li>目标图样</li>
 </ul>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg" /></p>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg"></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg"></p>
 <ul>
 <li>截图</li>
 </ul>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg" /></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg"></p>
 ]]></content>
       <categories>
         <category>Game</category>
@@ -545,6 +545,26 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       </categories>
       <tags>
         <tag>Emotion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《或许》--YOASOBI</title>
+    <url>/2021/09/29/%E3%80%8A%E6%88%96%E8%AE%B8%E3%80%8B-YOASOBI/</url>
+    <content><![CDATA[<p>最终我们还是成为了永不相见的陌路人。</p>
+<span id="more"></span>
+<p>说陌路人可能都算是我的一厢情愿，在对方眼里，我可能是十恶不赦，应该打入十八层地狱的恶魔。走到这一步的时候，我曾希望那场面能够平静如水，互相轻声诉说，最后郑重道别。事实却是，我们没有见面。</p>
+<p>​ 我无法想象当面说出我的决定后，对方的反应会是什么样子。或许是困惑，或许是痛苦，或许是失望。无论是那种，一定混杂着愤怒与冷漠。我们曾怒目相对，嘶吼着想扯开对方的防线，将自己的话语烙在对方的心里，使对方每每想起，都会再次体味自己的痛苦。我们也曾冷眼相视，用最幼稚的固执来推开对方，用对将要失去彼此的不屑一顾来维持自己可笑的自尊。</p>
+<p>​ 我想，大部分未能携手走下去的人都或多或少经历过这样的坎坷。为了结束相互或单方向的折磨，我们设定一个时间，或者设定一个事件，更多的时候，我们设定特定时间下的特定事件。它发生了或没发生都会导向关系的结束。</p>
+<p>​ 有时，事情发生地过于突然或者过于顺利，我们还有很多事物没有结算完毕。房租、相片、睡衣、还在路上的快递、没用完的日用品、在对方那里存放的东西、朋友们获悉的顺序、未完的旅行计划、尾款、水杯、枕头、钥匙、没爆发的怒火、给对方的指责、受到的委屈、希望对方做到的事情、准备好给对方发现的惊喜、为对方养成的习惯、为对方做出的改变、给对方的爱、给自己的爱。当转过身去，这一切就已经被按下暂停键，剩下两人独自清理所有残留的模糊痕迹。然后，向夜晚奔去。</p>
+<p><img src="/2021/09/29/%E3%80%8A%E6%88%96%E8%AE%B8%E3%80%8B-YOASOBI/maybe.jpg"></p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Sharing</tag>
+        <tag>Emotion</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
 </search>

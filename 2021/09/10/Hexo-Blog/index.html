@@ -30,7 +30,7 @@
 <meta property="og:description" content="Hexo Installation  additional modules">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-09T16:28:12.000Z">
-<meta property="article:modified_time" content="2021-09-11T05:22:49.144Z">
+<meta property="article:modified_time" content="2021-09-11T05:22:49.140Z">
 <meta property="article:author" content="Yulin LIU">
 <meta property="article:tag" content="Coding">
 <meta property="article:tag" content="Self-Learning">
@@ -89,9 +89,9 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="I Know Nothing" type="application/atom+xml">
 
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="I Know Nothing" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -290,21 +290,21 @@
 </ul>
 <span id="more"></span>
 <h2 id="setup">Setup</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li>
 <li>follow the solution <a target="_blank" rel="noopener" href="https://www.haoyizebo.com/posts/710984d0/">here</a></li>
 </ul>
 <h2 id="add-algolia-search">Add algolia search</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li><p>go to <a target="_blank" rel="noopener" href="https://www.algolia.com/">Algolia</a></p></li>
 <li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p></li>
 <li><p>three Keys: Search-Only, Admin, new_Key</p></li>
 <li><p>one ID: Application ID</p></li>
 </ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li>
 </ul>
@@ -439,7 +439,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -452,7 +452,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
