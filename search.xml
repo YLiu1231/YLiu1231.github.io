@@ -1,329 +1,605 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>window post test</title>
-      <link href="/2021/10/03/window-post-test/"/>
-      <url>/2021/10/03/window-post-test/</url>
-      
-        <content type="html"><![CDATA[<span id="more"></span><p>Hello-World -------- From Windows</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>Init</title>
+    <url>/2021/09/09/Init/</url>
+    <content><![CDATA[<h2 id="helloworld">HelloWorld!</h2>
+<span id="more"></span>
+<p>Reading more test~</p>
+]]></content>
       <categories>
-          
-          <category> Self-Learning </category>
-          
+        <category>Life</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Coding </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>《或许》--YOASOBI</title>
-      <link href="/2021/09/29/%E3%80%8A%E6%88%96%E8%AE%B8%E3%80%8B-YOASOBI/"/>
-      <url>/2021/09/29/%E3%80%8A%E6%88%96%E8%AE%B8%E3%80%8B-YOASOBI/</url>
-      
-        <content type="html"><![CDATA[<p>最终我们还是成为了永不相见的陌路人。</p><span id="more"></span><p>说陌路人可能都算是我的一厢情愿，在对方眼里，我可能是十恶不赦，应该打入十八层地狱的恶魔。走到这一步的时候，我曾希望那场面能够平静如水，互相轻声诉说，最后郑重道别。事实却是，我们没有见面。</p><p>​ 我无法想象当面说出我的决定后，对方的反应会是什么样子。或许是困惑，或许是痛苦，或许是失望。无论是那种，一定混杂着愤怒与冷漠。我们曾怒目相对，嘶吼着想扯开对方的防线，将自己的话语烙在对方的心里，使对方每每想起，都会再次体味自己的痛苦。我们也曾冷眼相视，用最幼稚的固执来推开对方，用对将要失去彼此的不屑一顾来维持自己可笑的自尊。</p><p>​ 我想，大部分未能携手走下去的人都或多或少经历过这样的坎坷。为了结束相互或单方向的折磨，我们设定一个时间，或者设定一个事件，更多的时候，我们设定特定时间下的特定事件。它发生了或没发生都会导向关系的结束。</p><p>​ 有时，事情发生地过于突然或者过于顺利，我们还有很多事物没有结算完毕。房租、相片、睡衣、还在路上的快递、没用完的日用品、在对方那里存放的东西、朋友们获悉的顺序、未完的旅行计划、尾款、水杯、枕头、钥匙、没爆发的怒火、给对方的指责、受到的委屈、希望对方做到的事情、准备好给对方发现的惊喜、为对方养成的习惯、为对方做出的改变、给对方的爱、给自己的爱。当转过身去，这一切就已经被按下暂停键，剩下两人独自清理所有残留的模糊痕迹。然后，向夜晚奔去。</p><p><img src="/2021/09/29/%E3%80%8A%E6%88%96%E8%AE%B8%E3%80%8B-YOASOBI/maybe.jpg"></p>]]></content>
-      
-      
+      <tags>
+        <tag>Genesis</tag>
+        <tag>Coding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Blog</title>
+    <url>/2021/09/10/Hexo-Blog/</url>
+    <content><![CDATA[<h2 id="hexo-installation"><a href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2>
+<ul>
+<li><a href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">additional modules</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="setup">Setup</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li>
+<li>follow the solution <a href="https://www.haoyizebo.com/posts/710984d0/">here</a></li>
+</ul>
+<h2 id="add-algolia-search">Add algolia search</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>go to <a href="https://www.algolia.com/">Algolia</a></p></li>
+<li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p></li>
+<li><p>three Keys: Search-Only, Admin, new_Key</p></li>
+<li><p>one ID: Application ID</p></li>
+</ul>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li>
+</ul>
+<h2 id="add-favicon">Add favicon</h2>
+<ul>
+<li>open <a href="https://www.favicon-generator.org/">web</a></li>
+<li>select pic and generate</li>
+<li>rename the pic files to match the theme config (not site config)</li>
+</ul>
+<h2 id="multi-font">Multi-font</h2>
+<ul>
+<li>follow <a href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Fonts-Customization">web</a></li>
+</ul>
+<h2 id="photo-gallery">Photo Gallery</h2>
+<ul>
+<li>follow <a href="https://co5.me/2018/181112-gallerry2.html">css+markdown 实现 hexo 相册【进阶篇】</a></li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> Life </category>
-          
+        <category>Tech</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Sharing </tag>
-            
-            <tag> Emotion </tag>
-            
-            <tag> Reading </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>四年前的检讨书</title>
-      <link href="/2021/09/12/%E5%9B%9B%E5%B9%B4%E5%89%8D%E7%9A%84%E6%A3%80%E8%AE%A8%E4%B9%A6/"/>
-      <url>/2021/09/12/%E5%9B%9B%E5%B9%B4%E5%89%8D%E7%9A%84%E6%A3%80%E8%AE%A8%E4%B9%A6/</url>
-      
-        <content type="html"><![CDATA[<p>上一篇检讨书是深夜写的，写到后面已经十分困倦，许多话都是一带而过，整篇结构显得头重脚轻，跑题严重。现在看来，不该急于写完，应该一点一点，仔细剖析自己的现状。</p><span id="more"></span><p>​ 一开始想说清楚的就是我“嘚瑟”的本质。一句话来说就是，我肆意地释放了自己的情绪。我并不是，也永远不会因为自己的学业、项目、奖学金之类的事情而向别人夸耀、显摆自己。但是一些过往的原因，让我心中仍然存留着劣质的、可笑的一点点优越感，我也一直小心翼翼地克制着。再有就是，我现在确实不太清楚社会就业、薪资的现状。读了博士，接触的人群变化了，我就觉得社会大众的定义向他们偏移。然而，各城市的人均薪资着实让我感到十分吃惊，这种吃惊源于我对基本劳动力价值的高估。大家只要努力奋斗，生活都会好起来的，但大家出发点的差异还是很残酷。</p><p>​ 我会永远坚持我的梦想：我要做一个纯粹的、善良的人，不用恶意揣度他人，不用正义感去评判他人，不用任何价值去衡量他人。但是，作为一个动物性的人，我还是劣根的，如此的想法会让我不自觉的抬高自己，对自己感到失望与无奈。</p><p>​ 最近看老师动辄百万购置服务器，总觉得自己未来也能手持重金，完成大型项目。这是我的目标不错，但是我现在仍然是个门外汉，一个一无所知的一年级新生。我的愚蠢与可笑就在于此，当别人问我专业的时候，我嘴上说着工业工程，没什么用的专业，但是我脑海中已经浮现出机场货仓、码头集装箱、交通路线规划等等至今仍是难解的问题，在我或者我参与的团队手中一一解决。</p><p>​ <strong>用幻想的未来支撑当下的行动是我最嘚瑟的地方了吧。</strong></p><p>​ 一个人不成熟的表现之一应该是，预设对方的思维逻辑与自己相同。总以为别人和自己想的一样，做的一样。我只顾着自己的行为模式，把别人也放在自己的假设里，定位成一个提供反馈的对象，而不是一个人。高一班主任说我做题的时候总是想当然，不能正确地、全面地、沉稳地面对题目。现在好像也是一样的，我不断从一个象牙塔走进另一个象牙塔，遇到的人大部分是学生，罕有冲突，不会触碰到他人的面子或者自尊。和大家讨论问题时，也是就事论事，直指问题本身，从不上升到个人，也从未深究对方的思维基石由何构建。于是我在家人眼里就是愣头青、性子刚、不知变通，在亲情关系、家长里短上十分不可理喻。我想我应该越来越解放自己的思想，接纳他人的不同，甚至是与自己观点的对立。</p><p>​ <strong>我是芸芸众生中的一颗微粒，我经历了千万家灯火中的一盏，我看到了所有人都看到的日月星辰。我从来不特殊，也不会被命运优待，既不需要痛苦于为什么不是我的结果，也不应该沉溺于如果是我的假设。我和任何人都一样，随处可见但独一无二。</strong></p>]]></content>
-      
-      
+      <tags>
+        <tag>Coding</tag>
+        <tag>Self-Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo picture test</title>
+    <url>/2021/09/10/Hexo-picture-test/</url>
+    <content><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg"></p>
+]]></content>
       <categories>
-          
-          <category> Life </category>
-          
+        <category>Tech</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Emotion </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo video test</title>
-      <link href="/2021/09/11/Hexo-video-test/"/>
-      <url>/2021/09/11/Hexo-video-test/</url>
-      
-        <content type="html"><![CDATA[<h2 id="taeyeon-concert---the-unseen">Taeyeon Concert - THE UNSEEN</h2><iframe src="//player.bilibili.com/player.html?aid=243717657&amp;bvid=BV1mv411B7KK&amp;cid=282334437&amp;page=1&amp;high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%" danmuku="1"></iframe>]]></content>
-      
-      
+      <tags>
+        <tag>Sharing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用来摸鱼的座位就是要舒服一点</title>
+    <url>/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/</url>
+    <content><![CDATA[<h1 id="展示">0. 展示</h1>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/main.jpeg"></p>
+<span id="more"></span>
+<h1 id="桌面配置介绍">1. 桌面配置介绍</h1>
+<ul>
+<li><p>电脑: 一台15-inch mid 2015 MBP; 一台同组小伙伴帮组装的垃圾桶</p>
+<ul>
+<li>Mac已经用了三年了，是去17年美国交换之前老爸送的礼物（一直到现在都是主力机）</li>
+<li>pc的配置:
+<ul>
+<li>处理器: Intel Core i5-8600K @ 3.60GHz</li>
+<li>主板: MSI Z370M MORTAR (MS-7B54)</li>
+<li>内存: 16 GB ( CORSAIR DDR4 3000MHz )</li>
+<li>主硬盘: Intel SSDPEKKW256G8 ( 256 GB ssd )</li>
+<li>显卡: Nvidia GeForce GTX 1070 ( 8 GB / ZOTAC )</li>
+<li>显示器: DELL U2518D / DELL P2415Q</li>
+</ul></li>
+</ul></li>
+<li><p>设备: Magic TrackPad2/ Varmilo VA87MAC（有线)/ 罗技G502</p>
+<p>​ Varmilo VDBox/ 华为无线充电板15W/ 乂度TA-10/ AKG-k812/ QDC8CH/ AKG-N5005</p>
+<p>​ 希捷移动硬盘2TB、Samsung移动硬盘2TB/ USB3.0一拖四拓展坞</p></li>
+<li><p>支架: 爱格升45-295-026</p></li>
+<li><p>壁纸: Clannad动感新势力赠送海报</p>
+<p>​ 香港机场平面图（一年级做了一个机场货运项目）</p></li>
+<li><p>零件: 文具都是MUJI买的，特别好用</p></li>
+</ul>
+<h1 id="连接方式">2. 连接方式</h1>
+<h2 id="显示器">显示器</h2>
+<ul>
+<li><p>2<span class="math inline">\(\times\)</span>MAC Thunderbolt2 (miniDP) 连接两台显示器(DP)</p></li>
+<li><p>2<span class="math inline">\(\times\)</span>显卡DP口连接两台显示器(miniDP)</p></li>
+</ul>
+<p>这样2乘2连接的方式可以让我两台设备都有两个显示器可以用，也可以任意一块显示器显示任意设备，非常自由。缺点是需要四根较长miniDP转DP线材，才能顺利连接并且将线材隐藏到支架内</p>
+<h2 id="数据传输">数据传输</h2>
+<ul>
+<li><p>MAC USB-A连接P2415Q USB-B (3.0)</p></li>
+<li><p>PC USB-A连接U2518D USB-B (3.0)</p></li>
+</ul>
+<p>打通了数据通道后，显示器本身可作为拓展坞使用（不要太方便！），并且不需要另外给拓展坞供电。现在挂在显示器后面的一拖四拓展坞是之前购买的，需要独立供电，导致线材十分凌乱</p>
+<h2 id="音源输出">音源输出</h2>
+<ul>
+<li>乂度TA-10 AUX1口连接MAC 3.5mm耳机孔</li>
+<li>乂度TA-10 USB-B连接pc USB-A</li>
+</ul>
+<p>由于TA-10是解码耳放一体机，支持多种音源输入方式，并且按下旋钮即可切换，十分方便，让我可以在两台设备间自由切换，k812连TA-10小烧怡情</p>
+<p>QDC8CH作为便携设备，我的手机HUAWEI Mate30Pro/iPhoneX可以直推无压力</p>
+<h2 id="键盘鼠标触摸板输入">键盘/鼠标/触摸板输入</h2>
+<ul>
+<li>键盘通过VDBox连接U2518D，有线直连PC</li>
+<li>键盘通过VDBox蓝牙通道1连接MAC</li>
+</ul>
+<p>这款键盘是给在阿米洛淘宝旗舰店看到的，十分喜欢。然而一个键盘没办法在两个设备间切换，就又买了他家的小玩意VDBox。本身由显示器供电，作为蓝牙发射器与MAC连接。剩下两个通道暂时空着（我也试过连手机，但是很少用到）。VDBox通过按下对应按键来切换连接对象，也算是一键切换吧（就是要伸下手。。。）</p>
+<ul>
+<li>鼠标连接U2518D，有线直连PC</li>
+<li>触摸板通过蓝牙连接MAC</li>
+</ul>
+<p>其实我也想换个蓝牙键盘（Filco之类的一键切换连接对象的那种），但是蓝牙设备过多可能会导致不稳定（或许吧）（（更重要的是没钱。。。。））</p>
+<h2 id="移动硬盘">移动硬盘</h2>
+<p>两个移动硬盘都是通过显示器后面的USB-A接口连接两台设备，不用担心供电问题</p>
+<h2 id="无线充电板">无线充电板</h2>
+<p>无线充电板连接的是左边的P2415Q，这样右侧的桌面就全无一物，平时看paper、上网课记笔记等需要很多空间的时候就在这边做</p>
+<h1 id="显示器输入的切换">3.显示器输入的切换</h1>
+<h2 id="mac转pc">MAC转PC</h2>
+<p>参考 https://github.com/kfix/ddcctl，安装时设定显卡为intel，在命令行输入</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">ddcctl -d 1 -i 16</span><br><span class="line">ddcctl -d 2 -i 16</span><br></pre></td></tr></tbody></table></figure>
+<p>则可以切换主/副显示器输入源到miniDP</p>
+<h2 id="pc转mac">PC转MAC</h2>
+<p>下载<a href="https://www.dell.com/support/home/hk/zh/hkbsd1/drivers/driversdetails?driverid=yr19y">Dell Display Manager</a>，安装<a href="https://www.autohotkey.com/">AutoHotKey</a>，使用脚本</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">^F1::</span><br><span class="line">    Run, "C:\Program Files (x86)\Dell\Dell Display Manager\ddm.exe" /1:SetActiveInput DP </span><br><span class="line">Return</span><br></pre></td></tr></tbody></table></figure>
+<p>按下<code>control+F1</code>的组合键可将输入源转换为DP</p>
+<p><em>其实一个设备连接两个显示器时，关掉主显示器，则副显示器自动变为主显示器，所以可以连续切换主显示器两次</em></p>
+<p>不使用脚本时，则需要手动按下显示器上的控制键选择相应输入源（感觉不太优雅，师兄弟看到的时候不帅）</p>
+<h1 id="其他角度展示">4.其他角度展示</h1>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side1.jpeg"></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side2.jpeg"></p>
+<p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side3.jpeg"></p>
+<h3 id="ps">PS</h3>
+<ol start="0" type="1">
+<li><p>两个显示器是跟老板做了两个项目得的，感恩~</p></li>
+<li><p>花了将近三个星期搞了这套设备（所有设备都是读博两年半攒下来的，主要是设计使用方式、走线，购买器材与等待时间），尽管依然有很多改进的空间，心里还是十分开心的。</p></li>
+<li><p>我这次是换了座位才下决心重新整理桌面的，为了组内其他项目成员（我的亲师弟们）沟通交流方便，我从之前的宝地换到了办公室pantry的前面，打印机、冰箱、饮水机就在我的背后，全办公室人走来走去的时候都会瞄我几眼，那感觉。。。像景区。。。所以，就算摸鱼，我也要显得很认真（逛B站的我最专心，毕竟是抱着学习的心态欣赏up主们的才华的）</p></li>
+<li><p>《我是一个这样的人》是我高中的校训，倒背如流。现在的壁纸是老爸亲笔写的字然后用PS做的适配</p>
+<p>现在年纪大了，本以为这些教导的话语对我没影响，但是亲口念出的时候，依然能够感受到文字的力量（真的！念出来才有用，默念效果基本没有）。全文如下：</p>
+<p>我是一个有良知的人，我将无愧于父母的养育之恩和老师的良苦用心！</p>
+<p>我是一个有骨气的人，我不会甘于平庸、碌碌无为，我将通过百倍努力去改变人生、创造辉煌！</p>
+<p>我是一个意志坚强的人，我决不会言苦言累，“头悬梁，锥刺股”将是我学习上永远的榜样！</p>
+<p>我是一个惜时如金的人，我决不会浪费分秒宝贵时间，“三更灯火五更鸡”将是我刻苦学习的真实写照！</p>
+<p>我是一个潜力无穷的人，我的潜力在于我始终不渝，坚持不懈的努力中！</p>
+<p>牢记理想，勿忘奋斗！牢记理想，勿忘奋斗！！</p></li>
+<li><p>我还有很多好看的壁纸，基本都是刷PIXIV每日插画榜得到的</p></li>
+<li><p>说是摸鱼，其实我还算是努力学习的吧（嗯，相对而言）</p></li>
+<li><p>等专利、等paper、等下个topic、等项目。很多事情都要等</p></li>
+<li><p>也要攒钱给爸妈买新手机、买智慧屏、然后教他们用。现在他们华为畅联通话用得贼溜，秒杀微信视频</p></li>
+<li><p>曾经也要攒钱买求婚戒指，这个最头大，PhD哪来这么多钱呢</p></li>
+<li><p>今年过年就不给老爹买茅台了。。。五粮液吧</p></li>
+<li><p>有空再写点其他东西</p></li>
+</ol>
+]]></content>
       <categories>
-          
-          <category> Tech </category>
-          
+        <category>Life</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> SNSD </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo pdf test</title>
-      <link href="/2021/09/11/Hexo-pdf-test/"/>
-      <url>/2021/09/11/Hexo-pdf-test/</url>
-      
-        <content type="html"><![CDATA[<p>HKUST COMP 5712 Notes.</p><span id="more"></span><iframe src="/pdf/cs261.pdf" width="110%" height="1100px">This browser does not support PDF files. Please download the PDF to view it: &lt;a href:"/pdf/cs261.pdf"&gt;Download PDF</a></iframe>]]></content>
-      
-      
+      <tags>
+        <tag>Sharing</tag>
+        <tag>攻略</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阴阳师从零开始肝新区</title>
+    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</url>
+    <content><![CDATA[<h1 id="预约抽卡">预约抽卡</h1>
+<ul>
+<li><p>携带各阶式神，每日好友助力、分享助力</p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png"></p></li>
+</ul>
+<span id="more"></span>
+<h1 id="开服后">开服后</h1>
+<h2 id="过新手任务15级前">过新手任务（15级前）</h2>
+<ul>
+<li>做任务提升等级；达成成就（不要觉醒雪女）；二号位有速度直接升级，让狗粮队长先行动</li>
+<li>砸百鬼（获得基础式神碎片：镰鼬，追月神，清姬，日和坊）</li>
+<li>组队经验；金币副本</li>
+<li>不抽卡！15级前不享受概率up</li>
+</ul>
+<h2 id="成长期15级-30级">成长期（15级-30级）</h2>
+<ul>
+<li>拜师（大号）
+<ul>
+<li>准备六星爆伤麓丸刷副本等级（先自己打到最高，然后使用师父的式神协战升级副本）</li>
+<li>开启协同任务</li>
+<li>每日师徒副本</li>
+<li>师父优先准备一个五星6号位暴击御魂；2号位速度御魂</li>
+<li>准备一套破势满暴击；针女满暴击</li>
+</ul></li>
+<li>抽卡（拜师之后再抽，可完成师徒任务），看情况决定发展方向
+<ul>
+<li>三次概率up后，不抽卡，购买永久勾玉卡和御魂礼包</li>
+<li>没有上位替代式神，就准备兔子，座敷，铁鼠，丑女</li>
+</ul></li>
+<li>过平安百物语</li>
+<li>低星御魂养御灵，神乐&gt;晴明&gt;八百&gt;源博雅</li>
+<li>斗技刷满积分；嫌麻烦进去<strong>直接退</strong>；斗技段位可提升荣誉获取<strong>上限</strong></li>
+<li>刷突破（回复体力，结界卡），一退一打保持多勋章状态</li>
+<li>购买永久勾玉卡（可后面再买）</li>
+<li>跟进活动（资源相对于常规要多很多）；具体操作待考察</li>
+</ul>
+<h1 id="资源获取">资源获取</h1>
+<h2 id="体力"><a href="https://www.bilibili.com/read/cv259232?spm_id_from=333.999.0.0">体力</a></h2>
+<ul>
+<li>每日任务、12点/8点各20体</li>
+<li>悬赏封印</li>
+<li>探索副本及宝箱</li>
+<li>封魔之时四次点击，问答，当日boss，宝箱</li>
+<li>寮30、结界卡、体力食盒、寮补给8小时20体</li>
+<li>杂货铺勋章购买</li>
+<li>好友祝福</li>
+<li>当期大型活动</li>
+</ul>
+<h2 id="金币"><a href="https://www.bilibili.com/read/cv239659/">金币</a></h2>
+<ul>
+<li>每日任务、签到、花合战、成就系统</li>
+<li>悬赏封印（重要），两万、三万</li>
+<li>金币大作战（周期活动）</li>
+<li>各类副本
+<ul>
+<li>金币副本</li>
+<li>师徒副本</li>
+<li>探索副本</li>
+<li>封魔四次点击，问答，小boss，当日boss，宝箱</li>
+<li>御灵、地鬼、麒麟、阴界、道馆、真蛇、平安奇谭</li>
+<li>结界突破</li>
+<li>业原火/日轮/魂水/石距/年兽（较多金币）</li>
+<li>每周竞速</li>
+<li>委派任务</li>
+<li>首领退治</li>
+</ul></li>
+<li>阴阳寮
+<ul>
+<li>寮30任务、寮包、寮资金领取</li>
+<li>结界卡、寄养</li>
+</ul></li>
+<li>式神协战、同心之兰、好友祝福</li>
+<li>PVP
+<ul>
+<li>斗技、协同斗技、斗技应援</li>
+</ul></li>
+<li>御魂奉纳</li>
+<li>宠物配饰购买</li>
+<li>地域收集成就</li>
+<li>式神传记解锁</li>
+<li>新式神绘卷捐赠</li>
+<li>当期大型活动、节日礼包、商店礼包</li>
+</ul>
+<h2 id="勾玉"><a href="https://www.bilibili.com/read/cv274869?spm_id_from=333.999.0.0">勾玉</a></h2>
+<ul>
+<li>每日任务、签到、花合战、成就系统</li>
+<li>悬赏封印</li>
+<li>协战50</li>
+<li>结界突破</li>
+<li>永久勾玉卡</li>
+<li>地域鬼王，每周分享</li>
+<li>百鬼弈</li>
+<li>结界卡</li>
+<li>秘闻副本，每周分享</li>
+<li>斗技、协同斗技</li>
+<li>真蛇通关</li>
+<li>黑蛋签到</li>
+<li>逢魔之时boss、宝箱、答题、小boss</li>
+<li>御魂奉纳</li>
+<li>大蛇副本，秋田犬每日奖励</li>
+<li>好友祝福</li>
+<li>地域收集</li>
+<li>当期大型活动</li>
+<li>式神委派</li>
+<li>御祝</li>
+<li>平安百物语</li>
+<li>探索副本（偶然获得）</li>
+<li>式神传记</li>
+<li>皮肤分享</li>
+<li>召回好友，总计1000</li>
+<li>绑定手机</li>
+<li>新式神绘卷捐赠</li>
+</ul>
+<h2 id="蓝票"><a href="https://www.bilibili.com/video/BV1Gf4y1a7it?from=search&amp;seid=4162949903203472266&amp;spm_id_from=333.337.0.0">蓝票</a></h2>
+<ul>
+<li>勋章商店</li>
+<li>荣誉商店</li>
+<li>寮商店</li>
+<li>每周图鉴分享</li>
+<li>每月神秘图案</li>
+<li>平安奇谭</li>
+<li>各种副本概率获取</li>
+</ul>
+<h1 id="达摩使用">达摩使用</h1>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png"></p>
+<ul>
+<li>现在由于有一键育成，只需要把蓝蛋养成到13级即可经验收益最大化（因为蓝蛋升级需要消耗经验，提供与消耗差值最大时是13级）</li>
+<li>保持三星满级白蛋30个以上（直接从这个等级的白蛋开始消耗，不需要将低星白蛋再养起来消耗经验与狗粮）</li>
+<li>以上两点都需手动解决</li>
+</ul>
+<h1 id="地鬼声望获取">地鬼声望获取</h1>
+<ul>
+<li>微博ID: 想成为大佬的竹会</li>
+<li>刷前三、前百、前三百获得高声望，随缘吧</li>
+<li>或者找词条苛刻的地鬼，蝠翼麓丸一拖四</li>
+</ul>
+<h1 id="副本阵容准备">副本阵容准备</h1>
+<h2 id="魂一至魂十麒麟一至十">魂一至魂十、麒麟一至十</h2>
+<ul>
+<li>刷好友羁绊150，第二天可借用师父式神协战</li>
+<li>师父准备一只70暴击狂歌不知火</li>
+<li>徒弟尽自己所能刷到高等级副本，再协战</li>
+<li>通过之后可组队刷</li>
+</ul>
+<h2 id="魂土">魂土</h2>
+<ul>
+<li>开启魂土需要通过前置挑战</li>
+<li>一层大蛇，四拉条/推条+输出</li>
+<li><a href="https://www.bilibili.com/video/BV1cE411j7UQ/?spm_id_from=333.788.recommend_more_video.-1">二层晴明</a></li>
+</ul>
+<h2 id="真蛇">真蛇</h2>
+<p>两人组队一人七个单位，同时在场3个单位</p>
+<ul>
+<li>师父：
+<ul>
+<li>速生爆蚌精吞</li>
+<li>镇墓兽/针女+歌姬小黑</li>
+<li>心眼麓丸</li>
+<li>备用针女歌姬sp花</li>
+<li>速生爆蚌精吞2</li>
+</ul></li>
+<li>徒弟
+<ul>
+<li>210+速招财/火灵兔*2</li>
+<li>火灵辉夜姬/座敷*2，生生生</li>
+<li>白蛋*3，散件生生生</li>
+<li>晴明锁盾</li>
+</ul></li>
+</ul>
+<h2 id="魂水">魂水</h2>
+<ul>
+<li>p1 萤帝火修烬</li>
+<li><a href="https://www.bilibili.com/video/BV1u5411u7qL?from=search&amp;seid=14286783005658243467&amp;spm_id_from=333.337.0.0">p2</a></li>
+</ul>
+<h2 id="日轮之陨">日轮之陨</h2>
+<ul>
+<li><a href="https://nga.178.com/read.php?tid=25452942&amp;rand=35">具体计算原理</a></li>
+<li>搭配方式：<a href="https://bbs.nga.cn/read.php?tid=23251576">御魂导出器</a> + <a href="https://yuhunhub.tql8.com/">御魂hub</a>
+<ul>
+<li>选择<code>公共预设</code><span class="math inline">\(\rightarrow\)</span><code>御魂</code> <span class="math inline">\(\rightarrow\)</span><code>日轮</code><span class="math inline">\(\rightarrow\)</span><code>日轮16s丑缘铁玉茨（破荒玉）</code></li>
+<li>依次计算、收藏、排除套装得到结果</li>
+</ul></li>
+<li>组队需小号按照面板配置御魂</li>
+</ul>
+<h2 id="师徒任务"><a href="https://www.bilibili.com/video/BV1TK411c76C">师徒任务</a></h2>
+<ul>
+<li>操作细节参考视频</li>
+<li>师徒副本阵容修烬晴烬火铁</li>
+</ul>
+<h2 id="金币经验副本">金币、经验副本</h2>
+<ul>
+<li>烬/06+琴琴灯辉</li>
+<li>一定记得开加成！</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> Tech </category>
-          
+        <category>Game</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Coding </tag>
-            
-            <tag> Sharing </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>隔离注意事项</title>
-      <link href="/2021/09/11/%E9%9A%94%E7%A6%BB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
-      <url>/2021/09/11/%E9%9A%94%E7%A6%BB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
-      
-        <content type="html"><![CDATA[<ul><li><p>两地转换插头若干</p></li><li><p>水、食物若干（多次连续12小时以上无饮食供给，有些酒店甚至不提供饮用水，有条件准备便携滤水装置）</p></li></ul><span id="more"></span><ul><li><p>便携灯具</p></li><li><p>拖线板若干（酒店插座位置各异，长度、槽位可能不够）</p></li><li><p>湿巾、湿厕纸、抽纸若干（隔离点提供卷纸）</p></li><li><p>保持各电子设备电量充足（各防疫地点均有扫码需求）</p></li><li><p>洗衣粉或洗衣液若干，搭配镊子绳子晾晒（衣架体积过大）</p></li><li><p>塑料拖鞋自备（酒店多提供一次性布拖鞋，甚至没有）</p></li><li><p>香薰或空气清新剂（排除房间、厕所异味）</p></li><li><p>确保电脑有无线网卡（网线有时不可用，IPTV专线限制等）</p></li><li><p>抹布、百洁布、少许洗洁精（酒店卫生参差不齐）</p></li><li><p>被单、毯子（若担心房间被褥不干净）</p></li><li><p>眼罩（有些酒店没有窗帘）</p></li><li><p>眼镜布（各处都会在行李上喷消毒酒精，眼镜容易脏）</p></li><li><p>洗漱用品、沐浴用品</p></li><li><p>娱乐学习用品（游戏主机、pc、switch、书籍、kindle、便携显示器等）</p></li><li><p>保持乐观心态，多和家人朋友聊天，关注自己身心健康～</p></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>攻略</tag>
+        <tag>阴阳师</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阴阳师副本业原火-御灵-图像识别</title>
+    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg"></p>
+<span id="more"></span>
+<h1 id="前言">前言</h1>
+<ul>
+<li><p>作为阴阳师的老咸鱼，账号上御灵券与痴券都是以千为单位计算。某天突然想把它们消耗掉的话是不现实的：枯燥的点击与等待让人抓狂</p></li>
+<li><p>御灵券可以用于刷绘卷获得高排名，进而拿到黑蛋、新式神碎片等稀有道具奖励；痴的六星掉率很高，是很好的奉纳资源，还能出双速</p></li>
+<li><p>刷副本的操作逻辑其实非常简单，对于我这种外行来说也是直观明了，每一步的目标和过程都很明确，结合现在图像识别技术，妥妥的能解决。</p></li>
+<li><p>我隔壁工位的另一个组的师兄，做的就是视频中的实时人脸识别与跟踪，成功的应用就是结合温度检测仪在校园里对大家的体温异常进行筛查，后来由于隐私问题改成了定点自主检测。这让我对解决问题有了兴趣与信心</p></li>
+<li><p><strong>强调一下，实现代码的目的是学习与应用，解决过程中遇到各类问题，扩充自身技能，增强执行能力</strong></p></li>
+<li><p>在参考了许多github仓库与blog后，自行编写的代码如下</p></li>
+</ul>
+<h1 id="正文">正文</h1>
+<h3 id="定位阴阳师客户端位置">定位阴阳师客户端位置</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u'阴阳师-网易游戏'</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>实操时发现，得到的四边坐标与真实位置有细微偏差，需要修正</li>
+</ul>
+<h3 id="获取当前阴阳师界面图像">获取当前阴阳师界面图像</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">'img/screenshot.jpg'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="使用open-cv进行图像处理">使用open-cv进行图像处理</h3>
+<h4 id="读取截图">读取截图</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">'img/screenshot.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="提取特征数值">提取特征数值</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="构建匹配模型">构建匹配模型</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="获取满足条件的特征点">获取满足条件的特征点</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>当特征点数量达到阈值，则说明匹配成功</li>
+</ul>
+<h4 id="定位特征点在前后坐标系的位置计算变换矩阵">定位特征点在前后坐标系的位置，计算变换矩阵</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="根据模板四个角的坐标获得可行域">根据模板四个角的坐标获得可行域</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="点击区域内的随机坐标并移动到随机区域">点击区域内的随机坐标，并移动到随机区域</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">'left'</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="总结">总结</h2>
+<ul>
+<li>有了图像识别就不需要像一般科学工具一样卡副本时间，不会遇到翻车情况时盲目点击（业原火现在最稳定的阵容20s，但仍有概率舅妈收尾失败）</li>
+<li>几乎不消耗内存、硬盘读写资源</li>
+<li>不需要考虑阴阳师界面大小，避免了点击区域的界定不准、繁琐的问题</li>
+<li>实测偶然出现变换矩阵为空的情况，添加判断语句避免了最后的翻车点</li>
+<li>完整代码就不放出来了，请自行探索、整理、编写</li>
+<li>有问题欢迎交流，祝大家游戏愉快，练度飞升～</li>
+</ul>
+<h3 id="模板示例">模板示例</h3>
+<ul>
+<li>目标图样</li>
+</ul>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg"></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg"></p>
+<ul>
+<li>截图</li>
+</ul>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg"></p>
+]]></content>
       <categories>
-          
-          <category> Life </category>
-          
+        <category>Game</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Sharing </tag>
-            
-            <tag> Experience </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>阴阳师副本业原火-御灵-图像识别</title>
-      <link href="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
-      <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
-      
-        <content type="html"><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1><p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg"></p><span id="more"></span><h1 id="前言">前言</h1><ul><li><p>作为阴阳师的老咸鱼，账号上御灵券与痴券都是以千为单位计算。某天突然想把它们消耗掉的话是不现实的：枯燥的点击与等待让人抓狂</p></li><li><p>御灵券可以用于刷绘卷获得高排名，进而拿到黑蛋、新式神碎片等稀有道具奖励；痴的六星掉率很高，是很好的奉纳资源，还能出双速</p></li><li><p>刷副本的操作逻辑其实非常简单，对于我这种外行来说也是直观明了，每一步的目标和过程都很明确，结合现在图像识别技术，妥妥的能解决。</p></li><li><p>我隔壁工位的另一个组的师兄，做的就是视频中的实时人脸识别与跟踪，成功的应用就是结合温度检测仪在校园里对大家的体温异常进行筛查，后来由于隐私问题改成了定点自主检测。这让我对解决问题有了兴趣与信心</p></li><li><p><strong>强调一下，实现代码的目的是学习与应用，解决过程中遇到各类问题，扩充自身技能，增强执行能力</strong></p></li><li><p>在参考了许多github仓库与blog后，自行编写的代码如下</p></li></ul><h1 id="正文">正文</h1><h3 id="定位阴阳师客户端位置">定位阴阳师客户端位置</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u'阴阳师-网易游戏'</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></tbody></table></figure><ul><li>实操时发现，得到的四边坐标与真实位置有细微偏差，需要修正</li></ul><h3 id="获取当前阴阳师界面图像">获取当前阴阳师界面图像</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">'img/screenshot.jpg'</span>)</span><br></pre></td></tr></tbody></table></figure><h3 id="使用open-cv进行图像处理">使用open-cv进行图像处理</h3><h4 id="读取截图">读取截图</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">'img/screenshot.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure><h4 id="提取特征数值">提取特征数值</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure><h4 id="构建匹配模型">构建匹配模型</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure><h4 id="获取满足条件的特征点">获取满足条件的特征点</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></tbody></table></figure><ul><li>当特征点数量达到阈值，则说明匹配成功</li></ul><h4 id="定位特征点在前后坐标系的位置计算变换矩阵">定位特征点在前后坐标系的位置，计算变换矩阵</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></tbody></table></figure><h4 id="根据模板四个角的坐标获得可行域">根据模板四个角的坐标获得可行域</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></tbody></table></figure><h4 id="点击区域内的随机坐标并移动到随机区域">点击区域内的随机坐标，并移动到随机区域</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">'left'</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></tbody></table></figure><h2 id="总结">总结</h2><ul><li>有了图像识别就不需要像一般科学工具一样卡副本时间，不会遇到翻车情况时盲目点击（业原火现在最稳定的阵容20s，但仍有概率舅妈收尾失败）</li><li>几乎不消耗内存、硬盘读写资源</li><li>不需要考虑阴阳师界面大小，避免了点击区域的界定不准、繁琐的问题</li><li>实测偶然出现变换矩阵为空的情况，添加判断语句避免了最后的翻车点</li><li>完整代码就不放出来了，请自行探索、整理、编写</li><li>有问题欢迎交流，祝大家游戏愉快，练度飞升～</li></ul><h3 id="模板示例">模板示例</h3><ul><li>目标图样</li></ul><p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg"></p><p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg"></p><ul><li>截图</li></ul><p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg"></p>]]></content>
-      
-      
+      <tags>
+        <tag>Coding</tag>
+        <tag>Self-Learning</tag>
+        <tag>阴阳师</tag>
+        <tag>图像识别</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo pdf test</title>
+    <url>/2021/09/11/Hexo-pdf-test/</url>
+    <content><![CDATA[<p>HKUST COMP 5712 Notes.</p>
+<span id="more"></span>
+<iframe src="/pdf/cs261.pdf" width="110%" height="1100px">
+This browser does not support PDF files. Please download the PDF to view it: &lt;a href:"/pdf/cs261.pdf"&gt;Download PDF</a>
+</iframe>
+]]></content>
       <categories>
-          
-          <category> Game </category>
-          
+        <category>Tech</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Coding </tag>
-            
-            <tag> Self-Learning </tag>
-            
-            <tag> 阴阳师 </tag>
-            
-            <tag> 图像识别 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>用来摸鱼的座位就是要舒服一点</title>
-      <link href="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/"/>
-      <url>/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/</url>
-      
-        <content type="html"><![CDATA[<h1 id="展示">0. 展示</h1><p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/main.jpeg"></p><span id="more"></span><h1 id="桌面配置介绍">1. 桌面配置介绍</h1><ul><li><p>电脑: 一台15-inch mid 2015 MBP; 一台同组小伙伴帮组装的垃圾桶</p><ul><li>Mac已经用了三年了，是去17年美国交换之前老爸送的礼物（一直到现在都是主力机）</li><li>pc的配置:<ul><li>处理器: Intel Core i5-8600K @ 3.60GHz</li><li>主板: MSI Z370M MORTAR (MS-7B54)</li><li>内存: 16 GB ( CORSAIR DDR4 3000MHz )</li><li>主硬盘: Intel SSDPEKKW256G8 ( 256 GB ssd )</li><li>显卡: Nvidia GeForce GTX 1070 ( 8 GB / ZOTAC )</li><li>显示器: DELL U2518D / DELL P2415Q</li></ul></li></ul></li><li><p>设备: Magic TrackPad2/ Varmilo VA87MAC（有线)/ 罗技G502</p><p>​ Varmilo VDBox/ 华为无线充电板15W/ 乂度TA-10/ AKG-k812/ QDC8CH/ AKG-N5005</p><p>​ 希捷移动硬盘2TB、Samsung移动硬盘2TB/ USB3.0一拖四拓展坞</p></li><li><p>支架: 爱格升45-295-026</p></li><li><p>壁纸: Clannad动感新势力赠送海报</p><p>​ 香港机场平面图（一年级做了一个机场货运项目）</p></li><li><p>零件: 文具都是MUJI买的，特别好用</p></li></ul><h1 id="连接方式">2. 连接方式</h1><h2 id="显示器">显示器</h2><ul><li><p>2<span class="math inline">\(\times\)</span>MAC Thunderbolt2 (miniDP) 连接两台显示器(DP)</p></li><li><p>2<span class="math inline">\(\times\)</span>显卡DP口连接两台显示器(miniDP)</p></li></ul><p>这样2乘2连接的方式可以让我两台设备都有两个显示器可以用，也可以任意一块显示器显示任意设备，非常自由。缺点是需要四根较长miniDP转DP线材，才能顺利连接并且将线材隐藏到支架内</p><h2 id="数据传输">数据传输</h2><ul><li><p>MAC USB-A连接P2415Q USB-B (3.0)</p></li><li><p>PC USB-A连接U2518D USB-B (3.0)</p></li></ul><p>打通了数据通道后，显示器本身可作为拓展坞使用（不要太方便！），并且不需要另外给拓展坞供电。现在挂在显示器后面的一拖四拓展坞是之前购买的，需要独立供电，导致线材十分凌乱</p><h2 id="音源输出">音源输出</h2><ul><li>乂度TA-10 AUX1口连接MAC 3.5mm耳机孔</li><li>乂度TA-10 USB-B连接pc USB-A</li></ul><p>由于TA-10是解码耳放一体机，支持多种音源输入方式，并且按下旋钮即可切换，十分方便，让我可以在两台设备间自由切换，k812连TA-10小烧怡情</p><p>QDC8CH作为便携设备，我的手机HUAWEI Mate30Pro/iPhoneX可以直推无压力</p><h2 id="键盘鼠标触摸板输入">键盘/鼠标/触摸板输入</h2><ul><li>键盘通过VDBox连接U2518D，有线直连PC</li><li>键盘通过VDBox蓝牙通道1连接MAC</li></ul><p>这款键盘是给在阿米洛淘宝旗舰店看到的，十分喜欢。然而一个键盘没办法在两个设备间切换，就又买了他家的小玩意VDBox。本身由显示器供电，作为蓝牙发射器与MAC连接。剩下两个通道暂时空着（我也试过连手机，但是很少用到）。VDBox通过按下对应按键来切换连接对象，也算是一键切换吧（就是要伸下手。。。）</p><ul><li>鼠标连接U2518D，有线直连PC</li><li>触摸板通过蓝牙连接MAC</li></ul><p>其实我也想换个蓝牙键盘（Filco之类的一键切换连接对象的那种），但是蓝牙设备过多可能会导致不稳定（或许吧）（（更重要的是没钱。。。。））</p><h2 id="移动硬盘">移动硬盘</h2><p>两个移动硬盘都是通过显示器后面的USB-A接口连接两台设备，不用担心供电问题</p><h2 id="无线充电板">无线充电板</h2><p>无线充电板连接的是左边的P2415Q，这样右侧的桌面就全无一物，平时看paper、上网课记笔记等需要很多空间的时候就在这边做</p><h1 id="显示器输入的切换">3.显示器输入的切换</h1><h2 id="mac转pc">MAC转PC</h2><p>参考 https://github.com/kfix/ddcctl，安装时设定显卡为intel，在命令行输入</p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ddcctl -d 1 -i 16</span><br><span class="line">ddcctl -d 2 -i 16</span><br></pre></td></tr></tbody></table></figure><p>则可以切换主/副显示器输入源到miniDP</p><h2 id="pc转mac">PC转MAC</h2><p>下载<a href="https://www.dell.com/support/home/hk/zh/hkbsd1/drivers/driversdetails?driverid=yr19y">Dell Display Manager</a>，安装<a href="https://www.autohotkey.com/">AutoHotKey</a>，使用脚本</p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">^F1::</span><br><span class="line">    Run, "C:\Program Files (x86)\Dell\Dell Display Manager\ddm.exe" /1:SetActiveInput DP </span><br><span class="line">Return</span><br></pre></td></tr></tbody></table></figure><p>按下<code>control+F1</code>的组合键可将输入源转换为DP</p><p><em>其实一个设备连接两个显示器时，关掉主显示器，则副显示器自动变为主显示器，所以可以连续切换主显示器两次</em></p><p>不使用脚本时，则需要手动按下显示器上的控制键选择相应输入源（感觉不太优雅，师兄弟看到的时候不帅）</p><h1 id="其他角度展示">4.其他角度展示</h1><p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side1.jpeg"></p><p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side2.jpeg"></p><p><img src="/2021/09/10/%E7%94%A8%E6%9D%A5%E6%91%B8%E9%B1%BC%E7%9A%84%E5%BA%A7%E4%BD%8D%E5%B0%B1%E6%98%AF%E8%A6%81%E8%88%92%E6%9C%8D%E4%B8%80%E7%82%B9/side3.jpeg"></p><h3 id="ps">PS</h3><ol start="0" type="1"><li><p>两个显示器是跟老板做了两个项目得的，感恩~</p></li><li><p>花了将近三个星期搞了这套设备（所有设备都是读博两年半攒下来的，主要是设计使用方式、走线，购买器材与等待时间），尽管依然有很多改进的空间，心里还是十分开心的。</p></li><li><p>我这次是换了座位才下决心重新整理桌面的，为了组内其他项目成员（我的亲师弟们）沟通交流方便，我从之前的宝地换到了办公室pantry的前面，打印机、冰箱、饮水机就在我的背后，全办公室人走来走去的时候都会瞄我几眼，那感觉。。。像景区。。。所以，就算摸鱼，我也要显得很认真（逛B站的我最专心，毕竟是抱着学习的心态欣赏up主们的才华的）</p></li><li><p>《我是一个这样的人》是我高中的校训，倒背如流。现在的壁纸是老爸亲笔写的字然后用PS做的适配</p><p>现在年纪大了，本以为这些教导的话语对我没影响，但是亲口念出的时候，依然能够感受到文字的力量（真的！念出来才有用，默念效果基本没有）。全文如下：</p><p>我是一个有良知的人，我将无愧于父母的养育之恩和老师的良苦用心！</p><p>我是一个有骨气的人，我不会甘于平庸、碌碌无为，我将通过百倍努力去改变人生、创造辉煌！</p><p>我是一个意志坚强的人，我决不会言苦言累，“头悬梁，锥刺股”将是我学习上永远的榜样！</p><p>我是一个惜时如金的人，我决不会浪费分秒宝贵时间，“三更灯火五更鸡”将是我刻苦学习的真实写照！</p><p>我是一个潜力无穷的人，我的潜力在于我始终不渝，坚持不懈的努力中！</p><p>牢记理想，勿忘奋斗！牢记理想，勿忘奋斗！！</p></li><li><p>我还有很多好看的壁纸，基本都是刷PIXIV每日插画榜得到的</p></li><li><p>说是摸鱼，其实我还算是努力学习的吧（嗯，相对而言）</p></li><li><p>等专利、等paper、等下个topic、等项目。很多事情都要等</p></li><li><p>也要攒钱给爸妈买新手机、买智慧屏、然后教他们用。现在他们华为畅联通话用得贼溜，秒杀微信视频</p></li><li><p>曾经也要攒钱买求婚戒指，这个最头大，PhD哪来这么多钱呢</p></li><li><p>今年过年就不给老爹买茅台了。。。五粮液吧</p></li><li><p>有空再写点其他东西</p></li></ol>]]></content>
-      
-      
+      <tags>
+        <tag>Coding</tag>
+        <tag>Sharing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo video test</title>
+    <url>/2021/09/11/Hexo-video-test/</url>
+    <content><![CDATA[<h2 id="taeyeon-concert---the-unseen">Taeyeon Concert - THE UNSEEN</h2>
+<iframe src="//player.bilibili.com/player.html?aid=243717657&amp;bvid=BV1mv411B7KK&amp;cid=282334437&amp;page=1&amp;high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%" danmuku="1">
+</iframe>
+]]></content>
       <categories>
-          
-          <category> Life </category>
-          
+        <category>Tech</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Sharing </tag>
-            
-            <tag> 攻略 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>阴阳师从零开始肝新区</title>
-      <link href="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/"/>
-      <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</url>
-      
-        <content type="html"><![CDATA[<h1 id="预约抽卡">预约抽卡</h1><ul><li><p>携带各阶式神，每日好友助力、分享助力</p><p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/预约抽卡.png"></p></li></ul><span id="more"></span><h1 id="开服后">开服后</h1><h2 id="过新手任务15级前">过新手任务（15级前）</h2><ul><li>做任务提升等级；达成成就（不要觉醒雪女）；二号位有速度直接升级，让狗粮队长先行动</li><li>砸百鬼（获得基础式神碎片：镰鼬，追月神，清姬，日和坊）</li><li>组队经验；金币副本</li><li>不抽卡！15级前不享受概率up</li></ul><h2 id="成长期15级-30级">成长期（15级-30级）</h2><ul><li>拜师（大号）<ul><li>准备六星爆伤麓丸刷副本等级（先自己打到最高，然后使用师父的式神协战升级副本）</li><li>开启协同任务</li><li>每日师徒副本</li><li>师父优先准备一个五星6号位暴击御魂；2号位速度御魂</li><li>准备一套破势满暴击；针女满暴击</li></ul></li><li>抽卡（拜师之后再抽，可完成师徒任务），看情况决定发展方向<ul><li>三次概率up后，不抽卡，购买永久勾玉卡和御魂礼包</li><li>没有上位替代式神，就准备兔子，座敷，铁鼠，丑女</li></ul></li><li>过平安百物语</li><li>低星御魂养御灵，神乐&gt;晴明&gt;八百&gt;源博雅</li><li>斗技刷满积分；嫌麻烦进去<strong>直接退</strong>；斗技段位可提升荣誉获取<strong>上限</strong></li><li>刷突破（回复体力，结界卡），一退一打保持多勋章状态</li><li>购买永久勾玉卡（可后面再买）</li><li>跟进活动（资源相对于常规要多很多）；具体操作待考察</li></ul><h1 id="资源获取">资源获取</h1><h2 id="体力"><a href="https://www.bilibili.com/read/cv259232?spm_id_from=333.999.0.0">体力</a></h2><ul><li>每日任务、12点/8点各20体</li><li>悬赏封印</li><li>探索副本及宝箱</li><li>封魔之时四次点击，问答，当日boss，宝箱</li><li>寮30、结界卡、体力食盒、寮补给8小时20体</li><li>杂货铺勋章购买</li><li>好友祝福</li><li>当期大型活动</li></ul><h2 id="金币"><a href="https://www.bilibili.com/read/cv239659/">金币</a></h2><ul><li>每日任务、签到、花合战、成就系统</li><li>悬赏封印（重要），两万、三万</li><li>金币大作战（周期活动）</li><li>各类副本<ul><li>金币副本</li><li>师徒副本</li><li>探索副本</li><li>封魔四次点击，问答，小boss，当日boss，宝箱</li><li>御灵、地鬼、麒麟、阴界、道馆、真蛇、平安奇谭</li><li>结界突破</li><li>业原火/日轮/魂水/石距/年兽（较多金币）</li><li>每周竞速</li><li>委派任务</li><li>首领退治</li></ul></li><li>阴阳寮<ul><li>寮30任务、寮包、寮资金领取</li><li>结界卡、寄养</li></ul></li><li>式神协战、同心之兰、好友祝福</li><li>PVP<ul><li>斗技、协同斗技、斗技应援</li></ul></li><li>御魂奉纳</li><li>宠物配饰购买</li><li>地域收集成就</li><li>式神传记解锁</li><li>新式神绘卷捐赠</li><li>当期大型活动、节日礼包、商店礼包</li></ul><h2 id="勾玉"><a href="https://www.bilibili.com/read/cv274869?spm_id_from=333.999.0.0">勾玉</a></h2><ul><li>每日任务、签到、花合战、成就系统</li><li>悬赏封印</li><li>协战50</li><li>结界突破</li><li>永久勾玉卡</li><li>地域鬼王，每周分享</li><li>百鬼弈</li><li>结界卡</li><li>秘闻副本，每周分享</li><li>斗技、协同斗技</li><li>真蛇通关</li><li>黑蛋签到</li><li>逢魔之时boss、宝箱、答题、小boss</li><li>御魂奉纳</li><li>大蛇副本，秋田犬每日奖励</li><li>好友祝福</li><li>地域收集</li><li>当期大型活动</li><li>式神委派</li><li>御祝</li><li>平安百物语</li><li>探索副本（偶然获得）</li><li>式神传记</li><li>皮肤分享</li><li>召回好友，总计1000</li><li>绑定手机</li><li>新式神绘卷捐赠</li></ul><h2 id="蓝票"><a href="https://www.bilibili.com/video/BV1Gf4y1a7it?from=search&amp;seid=4162949903203472266&amp;spm_id_from=333.337.0.0">蓝票</a></h2><ul><li>勋章商店</li><li>荣誉商店</li><li>寮商店</li><li>每周图鉴分享</li><li>每月神秘图案</li><li>平安奇谭</li><li>各种副本概率获取</li></ul><h1 id="达摩使用">达摩使用</h1><p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/达摩使用.png"></p><ul><li>现在由于有一键育成，只需要把蓝蛋养成到13级即可经验收益最大化（因为蓝蛋升级需要消耗经验，提供与消耗差值最大时是13级）</li><li>保持三星满级白蛋30个以上（直接从这个等级的白蛋开始消耗，不需要将低星白蛋再养起来消耗经验与狗粮）</li><li>以上两点都需手动解决</li></ul><h1 id="地鬼声望获取">地鬼声望获取</h1><ul><li>微博ID: 想成为大佬的竹会</li><li>刷前三、前百、前三百获得高声望，随缘吧</li><li>或者找词条苛刻的地鬼，蝠翼麓丸一拖四</li></ul><h1 id="副本阵容准备">副本阵容准备</h1><h2 id="魂一至魂十麒麟一至十">魂一至魂十、麒麟一至十</h2><ul><li>刷好友羁绊150，第二天可借用师父式神协战</li><li>师父准备一只70暴击狂歌不知火</li><li>徒弟尽自己所能刷到高等级副本，再协战</li><li>通过之后可组队刷</li></ul><h2 id="魂土">魂土</h2><ul><li>开启魂土需要通过前置挑战</li><li>一层大蛇，四拉条/推条+输出</li><li><a href="https://www.bilibili.com/video/BV1cE411j7UQ/?spm_id_from=333.788.recommend_more_video.-1">二层晴明</a></li></ul><h2 id="真蛇">真蛇</h2><p>两人组队一人七个单位，同时在场3个单位</p><ul><li>师父：<ul><li>速生爆蚌精吞</li><li>镇墓兽/针女+歌姬小黑</li><li>心眼麓丸</li><li>备用针女歌姬sp花</li><li>速生爆蚌精吞2</li></ul></li><li>徒弟<ul><li>210+速招财/火灵兔*2</li><li>火灵辉夜姬/座敷*2，生生生</li><li>白蛋*3，散件生生生</li><li>晴明锁盾</li></ul></li></ul><h2 id="魂水">魂水</h2><ul><li>p1 萤帝火修烬</li><li><a href="https://www.bilibili.com/video/BV1u5411u7qL?from=search&amp;seid=14286783005658243467&amp;spm_id_from=333.337.0.0">p2</a></li></ul><h2 id="日轮之陨">日轮之陨</h2><ul><li><a href="https://nga.178.com/read.php?tid=25452942&amp;rand=35">具体计算原理</a></li><li>搭配方式：<a href="https://bbs.nga.cn/read.php?tid=23251576">御魂导出器</a> + <a href="https://yuhunhub.tql8.com/">御魂hub</a><ul><li>选择<code>公共预设</code><span class="math inline">\(\rightarrow\)</span><code>御魂</code> <span class="math inline">\(\rightarrow\)</span><code>日轮</code><span class="math inline">\(\rightarrow\)</span><code>日轮16s丑缘铁玉茨（破荒玉）</code></li><li>依次计算、收藏、排除套装得到结果</li></ul></li><li>组队需小号按照面板配置御魂</li></ul><h2 id="师徒任务"><a href="https://www.bilibili.com/video/BV1TK411c76C">师徒任务</a></h2><ul><li>操作细节参考视频</li><li>师徒副本阵容修烬晴烬火铁</li></ul><h2 id="金币经验副本">金币、经验副本</h2><ul><li>烬/06+琴琴灯辉</li><li>一定记得开加成！</li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>SNSD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>隔离注意事项</title>
+    <url>/2021/09/11/%E9%9A%94%E7%A6%BB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<ul>
+<li><p>两地转换插头若干</p></li>
+<li><p>水、食物若干（多次连续12小时以上无饮食供给，有些酒店甚至不提供饮用水，有条件准备便携滤水装置）</p></li>
+</ul>
+<span id="more"></span>
+<ul>
+<li><p>便携灯具</p></li>
+<li><p>拖线板若干（酒店插座位置各异，长度、槽位可能不够）</p></li>
+<li><p>湿巾、湿厕纸、抽纸若干（隔离点提供卷纸）</p></li>
+<li><p>保持各电子设备电量充足（各防疫地点均有扫码需求）</p></li>
+<li><p>洗衣粉或洗衣液若干，搭配镊子绳子晾晒（衣架体积过大）</p></li>
+<li><p>塑料拖鞋自备（酒店多提供一次性布拖鞋，甚至没有）</p></li>
+<li><p>香薰或空气清新剂（排除房间、厕所异味）</p></li>
+<li><p>确保电脑有无线网卡（网线有时不可用，IPTV专线限制等）</p></li>
+<li><p>抹布、百洁布、少许洗洁精（酒店卫生参差不齐）</p></li>
+<li><p>被单、毯子（若担心房间被褥不干净）</p></li>
+<li><p>眼罩（有些酒店没有窗帘）</p></li>
+<li><p>眼镜布（各处都会在行李上喷消毒酒精，眼镜容易脏）</p></li>
+<li><p>洗漱用品、沐浴用品</p></li>
+<li><p>娱乐学习用品（游戏主机、pc、switch、书籍、kindle、便携显示器等）</p></li>
+<li><p>保持乐观心态，多和家人朋友聊天，关注自己身心健康～</p></li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> Game </category>
-          
+        <category>Life</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 攻略 </tag>
-            
-            <tag> 阴阳师 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo picture test</title>
-      <link href="/2021/09/10/Hexo-picture-test/"/>
-      <url>/2021/09/10/Hexo-picture-test/</url>
-      
-        <content type="html"><![CDATA[<p><img src="/2021/09/10/Hexo-picture-test/worldmap.jpeg"></p>]]></content>
-      
-      
+      <tags>
+        <tag>Sharing</tag>
+        <tag>Experience</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>四年前的检讨书</title>
+    <url>/2021/09/12/%E5%9B%9B%E5%B9%B4%E5%89%8D%E7%9A%84%E6%A3%80%E8%AE%A8%E4%B9%A6/</url>
+    <content><![CDATA[<p>上一篇检讨书是深夜写的，写到后面已经十分困倦，许多话都是一带而过，整篇结构显得头重脚轻，跑题严重。现在看来，不该急于写完，应该一点一点，仔细剖析自己的现状。</p>
+<span id="more"></span>
+<p>​ 一开始想说清楚的就是我“嘚瑟”的本质。一句话来说就是，我肆意地释放了自己的情绪。我并不是，也永远不会因为自己的学业、项目、奖学金之类的事情而向别人夸耀、显摆自己。但是一些过往的原因，让我心中仍然存留着劣质的、可笑的一点点优越感，我也一直小心翼翼地克制着。再有就是，我现在确实不太清楚社会就业、薪资的现状。读了博士，接触的人群变化了，我就觉得社会大众的定义向他们偏移。然而，各城市的人均薪资着实让我感到十分吃惊，这种吃惊源于我对基本劳动力价值的高估。大家只要努力奋斗，生活都会好起来的，但大家出发点的差异还是很残酷。</p>
+<p>​ 我会永远坚持我的梦想：我要做一个纯粹的、善良的人，不用恶意揣度他人，不用正义感去评判他人，不用任何价值去衡量他人。但是，作为一个动物性的人，我还是劣根的，如此的想法会让我不自觉的抬高自己，对自己感到失望与无奈。</p>
+<p>​ 最近看老师动辄百万购置服务器，总觉得自己未来也能手持重金，完成大型项目。这是我的目标不错，但是我现在仍然是个门外汉，一个一无所知的一年级新生。我的愚蠢与可笑就在于此，当别人问我专业的时候，我嘴上说着工业工程，没什么用的专业，但是我脑海中已经浮现出机场货仓、码头集装箱、交通路线规划等等至今仍是难解的问题，在我或者我参与的团队手中一一解决。</p>
+<p>​ <strong>用幻想的未来支撑当下的行动是我最嘚瑟的地方了吧。</strong></p>
+<p>​ 一个人不成熟的表现之一应该是，预设对方的思维逻辑与自己相同。总以为别人和自己想的一样，做的一样。我只顾着自己的行为模式，把别人也放在自己的假设里，定位成一个提供反馈的对象，而不是一个人。高一班主任说我做题的时候总是想当然，不能正确地、全面地、沉稳地面对题目。现在好像也是一样的，我不断从一个象牙塔走进另一个象牙塔，遇到的人大部分是学生，罕有冲突，不会触碰到他人的面子或者自尊。和大家讨论问题时，也是就事论事，直指问题本身，从不上升到个人，也从未深究对方的思维基石由何构建。于是我在家人眼里就是愣头青、性子刚、不知变通，在亲情关系、家长里短上十分不可理喻。我想我应该越来越解放自己的思想，接纳他人的不同，甚至是与自己观点的对立。</p>
+<p>​ <strong>我是芸芸众生中的一颗微粒，我经历了千万家灯火中的一盏，我看到了所有人都看到的日月星辰。我从来不特殊，也不会被命运优待，既不需要痛苦于为什么不是我的结果，也不应该沉溺于如果是我的假设。我和任何人都一样，随处可见但独一无二。</strong></p>
+]]></content>
       <categories>
-          
-          <category> Tech </category>
-          
+        <category>Life</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Sharing </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo Blog</title>
-      <link href="/2021/09/10/Hexo-Blog/"/>
-      <url>/2021/09/10/Hexo-Blog/</url>
-      
-        <content type="html"><![CDATA[<h2 id="hexo-installation"><a href="https://hexo.io/zh-cn/docs/">Hexo Installation</a></h2><ul><li><a href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">additional modules</a></li></ul><span id="more"></span><h2 id="setup">Setup</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init foldername</span><br><span class="line">cd foldername</span><br><span class="line">hexo generate</span><br></pre></td></tr></tbody></table></figure><ul><li>you may see some warnings like <code>Accessing non-existent property ...</code>,</li><li>follow the solution <a href="https://www.haoyizebo.com/posts/710984d0/">here</a></li></ul><h2 id="add-algolia-search">Add algolia search</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd foldername</span><br><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></tbody></table></figure><ul><li><p>go to <a href="https://www.algolia.com/">Algolia</a></p></li><li><p>create <code>index_name</code>, add <code>ACLs</code>: <code>search</code>,<code>deleteObject</code>, <code>addObject</code>, <code>deleteIndex</code>, <code>listIndexes</code></p></li><li><p>three Keys: Search-Only, Admin, new_Key</p></li><li><p>one ID: Application ID</p></li></ul><figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">Application</span> <span class="string">ID</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">Search-Only</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="string">Admin</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">index_name</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span></span><br></pre></td></tr></tbody></table></figure><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=new_Key</span><br><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></tbody></table></figure><ul><li>when errors happen, try <code>hexo clean</code> and <code>hexo algolia</code> again.</li></ul><h2 id="add-favicon">Add favicon</h2><ul><li>open <a href="https://www.favicon-generator.org/">web</a></li><li>select pic and generate</li><li>rename the pic files to match the theme config (not site config)</li></ul><h2 id="multi-font">Multi-font</h2><ul><li>follow <a href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Fonts-Customization">web</a></li></ul><h2 id="photo-gallery">Photo Gallery</h2><ul><li>follow <a href="https://co5.me/2018/181112-gallerry2.html">css+markdown 实现 hexo 相册【进阶篇】</a></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>Emotion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《或许》--YOASOBI</title>
+    <url>/2021/09/29/%E3%80%8A%E6%88%96%E8%AE%B8%E3%80%8B-YOASOBI/</url>
+    <content><![CDATA[<p>最终我们还是成为了永不相见的陌路人。</p>
+<span id="more"></span>
+<p>说陌路人可能都算是我的一厢情愿，在对方眼里，我可能是十恶不赦，应该打入十八层地狱的恶魔。走到这一步的时候，我曾希望那场面能够平静如水，互相轻声诉说，最后郑重道别。事实却是，我们没有见面。</p>
+<p>​ 我无法想象当面说出我的决定后，对方的反应会是什么样子。或许是困惑，或许是痛苦，或许是失望。无论是那种，一定混杂着愤怒与冷漠。我们曾怒目相对，嘶吼着想扯开对方的防线，将自己的话语烙在对方的心里，使对方每每想起，都会再次体味自己的痛苦。我们也曾冷眼相视，用最幼稚的固执来推开对方，用对将要失去彼此的不屑一顾来维持自己可笑的自尊。</p>
+<p>​ 我想，大部分未能携手走下去的人都或多或少经历过这样的坎坷。为了结束相互或单方向的折磨，我们设定一个时间，或者设定一个事件，更多的时候，我们设定特定时间下的特定事件。它发生了或没发生都会导向关系的结束。</p>
+<p>​ 有时，事情发生地过于突然或者过于顺利，我们还有很多事物没有结算完毕。房租、相片、睡衣、还在路上的快递、没用完的日用品、在对方那里存放的东西、朋友们获悉的顺序、未完的旅行计划、尾款、水杯、枕头、钥匙、没爆发的怒火、给对方的指责、受到的委屈、希望对方做到的事情、准备好给对方发现的惊喜、为对方养成的习惯、为对方做出的改变、给对方的爱、给自己的爱。当转过身去，这一切就已经被按下暂停键，剩下两人独自清理所有残留的模糊痕迹。然后，向夜晚奔去。</p>
+<p><img src="/2021/09/29/%E3%80%8A%E6%88%96%E8%AE%B8%E3%80%8B-YOASOBI/maybe.jpg"></p>
+]]></content>
       <categories>
-          
-          <category> Tech </category>
-          
+        <category>Life</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Coding </tag>
-            
-            <tag> Self-Learning </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Init</title>
-      <link href="/2021/09/09/Init/"/>
-      <url>/2021/09/09/Init/</url>
-      
-        <content type="html"><![CDATA[<h2 id="helloworld">HelloWorld!</h2><span id="more"></span><p>Reading more test~</p>]]></content>
-      
-      
+      <tags>
+        <tag>Sharing</tag>
+        <tag>Emotion</tag>
+        <tag>Reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>window post test</title>
+    <url>/2021/10/03/window-post-test/</url>
+    <content><![CDATA[<span id="more"></span>
+<p>Hello-World -------- From Windows</p>
+]]></content>
       <categories>
-          
-          <category> Life </category>
-          
+        <category>Self-Learning</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Genesis </tag>
-            
-            <tag> Coding </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>Coding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>红烧黄鱼与炝炒土豆丝</title>
+    <url>/2021/10/07/%E7%BA%A2%E7%83%A7%E9%BB%84%E9%B1%BC%E4%B8%8E%E7%82%9D%E7%82%92%E5%9C%9F%E8%B1%86%E4%B8%9D/</url>
+    <content><![CDATA[<p>​ 今天第一次完整地给爸妈做了顿晚饭：简单的两个小菜和紫米地瓜粥。</p>
+<span id="more"></span>
+<p>​ 在网络上看了太多的美食视频，作者们都在清新色调的整洁厨房中，游刃有余又不失精细地处理各种食材。看不到污秽与脏乱，感觉不到水渍与碎屑。一切都十分舒爽顺畅，一气呵成。不论是食材还是调料，都十分听话地保持了成色与品相。他们手艺精湛，有条不紊地一边讲解一边微笑，眼神中充满了温柔与鼓励。</p>
+<p>​ 而当我走到家中的厨房，却感受到了许多异样。</p>
+<p>​ 厨房自装修到现在已有十四个年头，母亲依旧合理地按照自己习惯的布局堆放着各类材料。大葱、小葱和姜种在了一个装着肥料的水桶里，随吃随用；地瓜、土豆、胡萝卜、紫薯、山药则分袋堆放在冰箱旁边的地上；台面上碟碗旁边，新鲜的香菜、芹菜、韭菜、包菜、白菜、粉丝、香菇和剩下的煎饼、馒头、烤牌争抢着半米的台面。冰箱里最能够发现问题所在，大大小小的盘子，套着塑料袋错落堆放，看不清里面到底盛的是何日的剩菜。长久地存放，混合着鸡蛋、咸菜、生蔬的味道，有些许酸味和霉味，但更多的是令人望而却步的寒气。冷冻柜里更是如此，鱼、虾、牛肉、羊肉、猪肉、排骨、肘子等，尽管水汽凝结的冰碎深埋了它们的光泽，但是他们用气味与体积争抢着空间。八角、桂皮、香叶、陈皮、小米、紫米、大豆等却在另一层达到了奇妙的平衡。</p>
+<p>​ 今天我想做红烧鱼和土豆丝。先来做鱼。将两段黄鱼从冰箱里拿出，家里的微波炉好像坏了很久，只能用水将鱼解冻。只是将套了袋子的海鱼从冰箱里拿出来放到水盆里，双手就沾满了腥味，洗过还有味道。姜成片、蒜大颗粒、葱小段、芹菜小段、香菇切粒，分批放到两个碗里，菜板和台面上已经到处都是迸溅的颗粒，只要是能藏的地方，就会有调皮的能找到。将黄鱼从袋中取出，软烂冰冷的鱼皮就粘了我一手腥油。因为是切断的海鱼，手臂两倍粗的圆筒状，直接下锅煎不易受热均匀，后来炖煮也不易入味，只能从背部找到鱼骨横向切入。由于存放了太久，解除冰冻后鱼肉的组织已经松散，连接鱼骨与鱼肉的筋膜无处借力更难切断。我笨拙地拆解下大块的鱼肉，残留了很多在鱼骨上，既是无奈放弃也是主动抛弃。一切就绪，我的双手已经粘滑不堪。参考王刚老师的红烧教学，我也算顺利完成了。刷锅、刷锅铲、洗砧板，每一步都是水花四溅。不久，我感觉腰就已经开始吃力。</p>
+<p>​ 土豆只剩一个了，单做一个菜三个人吃有点不够，我看到还有胡萝卜和韭菜，想着做一个色彩亮丽的炝炒土豆丝。土豆和胡萝卜用刨子迅速地就去皮洗净，然而我的刀工确实是辜负了它们的新鲜，像薯条粗细，根根饱满。看起来干净饱满的韭菜，其实头部和尾部大多需要处理。尾部还好处理，就将不新鲜的、泛黄的、老的揪掉就可以；而头部则需要将透明的薄膜保护层摘下，一根一根，一点一点，拇指与食指不断地用劲，很快腰部传来了疲惫的信号，食指也受挤压泛红。我要速速解决战斗。姜丝、蒜粒、葱丝还有剩余，干辣椒剪段增香，尖椒起底味，油热下锅，左手扶料，右手用刀盛起倒入。这次翻炒更加熟练自如，然而左手小指贴在砧板上，沾到了辣椒籽，我感觉到火辣辣的烫。</p>
+<p>​ 陪父亲喝了一点酒，母亲也一直夸赞我的厨艺起步水平不错，一瞬间疲惫、腥臭、疼痛全部被父母的笑脸带来的成就感冲走，浑身上下突然有使不完的力气，十分开心。</p>
+<p>​ 饭前的苦思，进入厨房的抵触，打开冰箱的反感，台面杂乱的烦心，身体的疲惫，误伤的疼痛，收拾碗筷的懒惰，家人的健康、满足、快乐，短暂的成就感。</p>
+<p>​ 这些，父亲母亲每日都要经历几遍，已经三十二年了。</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Experience</tag>
+        <tag>Emotion</tag>
+      </tags>
+  </entry>
 </search>
