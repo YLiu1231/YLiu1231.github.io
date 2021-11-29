@@ -6,7 +6,7 @@
   <link href="https://lovelyl.me/atom.xml" rel="self"/>
   
   <link href="https://lovelyl.me/"/>
-  <updated>2021-11-09T15:34:49.898Z</updated>
+  <updated>2021-11-29T04:56:44.863Z</updated>
   <id>https://lovelyl.me/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为日记（一）</title>
+    <link href="https://lovelyl.me/2021/11/29/%E5%8D%8E%E4%B8%BA%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://lovelyl.me/2021/11/29/%E5%8D%8E%E4%B8%BA%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</id>
+    <published>2021-11-29T04:53:48.000Z</published>
+    <updated>2021-11-29T04:56:44.863Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天下午40名左右的新员工参加的在东莞华为三丫坡的入职开班活动，大家分了组，认识了来自五湖四海的新朋友，也在寻找单身、最小年龄、喜欢旅游等各种标签指引下，打破了心理的障壁。晚上大家进行了小组蒙眼障碍前进，在这个活动中，我对许多名词有了新的深刻的认识：信任、责任、风险控制、团队协作、解决方案。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Huawei Diary" scheme="https://lovelyl.me/categories/Huawei-Diary/"/>
+    
+    
+    <category term="Sharing" scheme="https://lovelyl.me/tags/Sharing/"/>
+    
+    <category term="Experience" scheme="https://lovelyl.me/tags/Experience/"/>
+    
+  </entry>
   
   <entry>
     <title>《性张力下的中国人》</title>
@@ -58,9 +79,9 @@
     <category term="Life" scheme="https://lovelyl.me/categories/Life/"/>
     
     
-    <category term="Reading" scheme="https://lovelyl.me/tags/Reading/"/>
-    
     <category term="Emotion" scheme="https://lovelyl.me/tags/Emotion/"/>
+    
+    <category term="Reading" scheme="https://lovelyl.me/tags/Reading/"/>
     
   </entry>
   
@@ -80,9 +101,9 @@
     <category term="Life" scheme="https://lovelyl.me/categories/Life/"/>
     
     
-    <category term="Reading" scheme="https://lovelyl.me/tags/Reading/"/>
-    
     <category term="Emotion" scheme="https://lovelyl.me/tags/Emotion/"/>
+    
+    <category term="Reading" scheme="https://lovelyl.me/tags/Reading/"/>
     
   </entry>
   
@@ -150,9 +171,9 @@
     
     <category term="Sharing" scheme="https://lovelyl.me/tags/Sharing/"/>
     
-    <category term="Reading" scheme="https://lovelyl.me/tags/Reading/"/>
-    
     <category term="Emotion" scheme="https://lovelyl.me/tags/Emotion/"/>
+    
+    <category term="Reading" scheme="https://lovelyl.me/tags/Reading/"/>
     
   </entry>
   
@@ -383,9 +404,9 @@
     <category term="Life" scheme="https://lovelyl.me/categories/Life/"/>
     
     
-    <category term="Genesis" scheme="https://lovelyl.me/tags/Genesis/"/>
-    
     <category term="Coding" scheme="https://lovelyl.me/tags/Coding/"/>
+    
+    <category term="Genesis" scheme="https://lovelyl.me/tags/Genesis/"/>
     
   </entry>
   
