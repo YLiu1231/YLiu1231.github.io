@@ -481,6 +481,20 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       </tags>
   </entry>
   <entry>
+    <title>Hexo video test</title>
+    <url>/2021/09/11/Hexo-video-test/</url>
+    <content><![CDATA[<h2 id="taeyeon-concert---the-unseen">Taeyeon Concert - THE UNSEEN</h2>
+<iframe src="//player.bilibili.com/player.html?aid=243717657&amp;bvid=BV1mv411B7KK&amp;cid=282334437&amp;page=1&amp;high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%" danmuku="1">
+</iframe>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>SNSD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>隔离注意事项</title>
     <url>/2021/09/11/%E9%9A%94%E7%A6%BB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
     <content><![CDATA[<ul>
@@ -512,20 +526,6 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       <tags>
         <tag>Sharing</tag>
         <tag>Experience</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo video test</title>
-    <url>/2021/09/11/Hexo-video-test/</url>
-    <content><![CDATA[<h2 id="taeyeon-concert---the-unseen">Taeyeon Concert - THE UNSEEN</h2>
-<iframe src="//player.bilibili.com/player.html?aid=243717657&amp;bvid=BV1mv411B7KK&amp;cid=282334437&amp;page=1&amp;high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%" danmuku="1">
-</iframe>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>SNSD</tag>
       </tags>
   </entry>
   <entry>
@@ -715,28 +715,6 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       </tags>
   </entry>
   <entry>
-    <title>华为日记（二）</title>
-    <url>/2021/11/30/%E5%8D%8E%E4%B8%BA%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<p>我从读大学的时候就一直想象着能有一个自己的个人网站，有专属的、特殊的域名，上面记录着我的读书感悟、随笔、杂文以及照片。但我并不是那种愿意主动与他人分享人生经历的人，如果有缘的朋友能发现这个网站，看到我的故事与记录，那是我的荣幸与幸运。如果没有人浏览，那我就把它当作自己的分身，代表着我过去的想法、思考，每当我打开时，能够与自己对话，让自己成长。</p>
-<span id="more"></span>
-<p>终于我在博士期间完成了这个任务，在跟随简洁的、直观的教程步骤后，我就获得了一个本地blog站点，接下来我就需要注册域名与Github托管，这些也都很容易。尽管blog的精彩在于内容，但是能够定制化出自己的个性也是我很大的期望。</p>
-<p>我使用的主题的自由度很高，并且同时借鉴了两个主题的内容。于是在进行个性化修改与调试的时候，我就发现了许多问题，比如功能未正确开启、源文件加载错误、库版本变更与冲突、定制区域偏离等等。</p>
-<p>对于不是科班出身的我来说，独立进行项目调试与运行，特别是定制化功能的开发与实现是一个非常大的挑战。</p>
-<p>于是我首先一遍一遍地梳理代码，将原本正确的部分与我个人修改的部分做了标识与注释，之后进行断点调试，一步一步熟悉css，js文件的逻辑模块与语法。</p>
-<p>之后我进行了系统的搜索与筛选，将一些常见的、其他开发者曾经解决的问题进行了逐个排查，在看到todo list中的事项一个一个被打上勾的过程中，我的成就感与幸福感也随之增加。</p>
-<p>我也尝试提issue给库的贡献者，阐述问题，希望直接与开发者进行交流，后来由于在复现时我发现了错误的来源，于是放弃了提交。但是我鼓起了勇气，直接面对开发者，这对我的自信与热爱是极大的促进。</p>
-<p>最后，在经过四天的奋战后，我的小站终于上线了（域名好贵啊 T.T）。当我打开我的网页，界面刷新出“hello world”的那一刻，我这四天的点点滴滴都涌上心头，百感交集。能够解决问题，在过程中不断挑战自己，精益求精，合理安排issue处理顺序，所有的经验又一次在我的脑海中夯实，这将会是我宝贵的财富。</p>
-<p>我希望自己能够管住自己的嘴，坐住自己的板凳，冷眼观人，冷耳听语，冷情当感，冷心思理。为了自己的热爱，勇往直前。</p>
-]]></content>
-      <categories>
-        <category>Huawei Diary</category>
-      </categories>
-      <tags>
-        <tag>Sharing</tag>
-        <tag>Experience</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《性张力下的中国人》</title>
     <url>/2021/11/09/%E3%80%8A%E6%80%A7%E5%BC%A0%E5%8A%9B%E4%B8%8B%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA%E3%80%8B/</url>
     <content><![CDATA[<h2 id="中国传统文化中性问题对立的两极">中国传统文化中性问题对立的两极</h2>
@@ -835,6 +813,28 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       </tags>
   </entry>
   <entry>
+    <title>华为日记（二）</title>
+    <url>/2021/11/30/%E5%8D%8E%E4%B8%BA%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<p>我从读大学的时候就一直想象着能有一个自己的个人网站，有专属的、特殊的域名，上面记录着我的读书感悟、随笔、杂文以及照片。但我并不是那种愿意主动与他人分享人生经历的人，如果有缘的朋友能发现这个网站，看到我的故事与记录，那是我的荣幸与幸运。如果没有人浏览，那我就把它当作自己的分身，代表着我过去的想法、思考，每当我打开时，能够与自己对话，让自己成长。</p>
+<span id="more"></span>
+<p>终于我在博士期间完成了这个任务，在跟随简洁的、直观的教程步骤后，我就获得了一个本地blog站点，接下来我就需要注册域名与Github托管，这些也都很容易。尽管blog的精彩在于内容，但是能够定制化出自己的个性也是我很大的期望。</p>
+<p>我使用的主题的自由度很高，并且同时借鉴了两个主题的内容。于是在进行个性化修改与调试的时候，我就发现了许多问题，比如功能未正确开启、源文件加载错误、库版本变更与冲突、定制区域偏离等等。</p>
+<p>对于不是科班出身的我来说，独立进行项目调试与运行，特别是定制化功能的开发与实现是一个非常大的挑战。</p>
+<p>于是我首先一遍一遍地梳理代码，将原本正确的部分与我个人修改的部分做了标识与注释，之后进行断点调试，一步一步熟悉css，js文件的逻辑模块与语法。</p>
+<p>之后我进行了系统的搜索与筛选，将一些常见的、其他开发者曾经解决的问题进行了逐个排查，在看到todo list中的事项一个一个被打上勾的过程中，我的成就感与幸福感也随之增加。</p>
+<p>我也尝试提issue给库的贡献者，阐述问题，希望直接与开发者进行交流，后来由于在复现时我发现了错误的来源，于是放弃了提交。但是我鼓起了勇气，直接面对开发者，这对我的自信与热爱是极大的促进。</p>
+<p>最后，在经过四天的奋战后，我的小站终于上线了（域名好贵啊 T.T）。当我打开我的网页，界面刷新出“hello world”的那一刻，我这四天的点点滴滴都涌上心头，百感交集。能够解决问题，在过程中不断挑战自己，精益求精，合理安排issue处理顺序，所有的经验又一次在我的脑海中夯实，这将会是我宝贵的财富。</p>
+<p>我希望自己能够管住自己的嘴，坐住自己的板凳，冷眼观人，冷耳听语，冷情当感，冷心思理。为了自己的热爱，勇往直前。</p>
+]]></content>
+      <categories>
+        <category>Huawei Diary</category>
+      </categories>
+      <tags>
+        <tag>Sharing</tag>
+        <tag>Experience</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>华为日记（三）</title>
     <url>/2021/12/01/%E5%8D%8E%E4%B8%BA%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h2 id="以客户为中心场景展示">以客户为中心场景展示</h2>
@@ -918,6 +918,33 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       <tags>
         <tag>Sharing</tag>
         <tag>Movie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>信</title>
+    <url>/2021/12/30/%E4%BF%A1/</url>
+    <content><![CDATA[<p>亲爱的妈妈：</p>
+<p>​ 您好！先祝您56岁生日快乐！</p>
+<p>​ 或许这不是第一次给您写信，但这肯定是我成年后的第一次。中国人很奇怪，总是越亲近的人，越难表达爱意。妈妈，我爱你！</p>
+<span id="more"></span>
+<p>​ 首先感谢您给了我生命，让我能够来到这个精彩的世界，孕育的过程十分艰辛，甚至给您留下了一生的疼痛，我很愧疚。感谢您给了我一个幸福的家庭，长大以后才知道，这触手可及的平凡温馨竟是那么的幸运。感谢您给了我一个快乐的成长环境，从小到大，无论是学习还是生活上，你们都没有给我任何的压力，让我专注于开心的事物，内心一直都保持着最纯净的善良。感谢您和老爸给我树立了完美的榜样，让我继承了最珍贵的品质，踏实、努力、包容与冷静。感谢您和老爸一直尊重我，与我做朋友，愿意倾听也愿意分享。</p>
+<p>​ 我所有的一切都来自于你们的付出，我希望自己能够成为你们的骄傲。</p>
+<p>​ 我在成长，你们在老去，老爹、奶奶和舅姥也开始了离别的倒计时。这是天道自然，也是孩子们最大的痛苦。您和老爸是那么的坚强，你们肯定会做的很完美。在这个新的人生节点，我也给您一些祝福与建议。</p>
+<p>​ 首要的，也是您和老爸一直在跟我和姐强调的，请您和老爸一定要注意身体，感受身体的变化，关注身体的异常。我知道您一直很抗拒看病，觉得自己没到“那个”阶段，但其实所谓的阶段并不存在，得什么病挂什么科，病与病之间并无绝对联系，反而您一直拖着，靠自己的身体扛，这是不科学的，甚至可能会引起并发。</p>
+<p>​ 其次，我希望您保持愉悦的心情，平和的心境，冷静的心态。您为人处事一直热心积极，同时也容易焦急烦躁，难免横冲直撞，落下差错。您的情绪来得快，去得也快，更多时候，需要坚持通达的情绪底色，这将会时刻让您保持自信与淡定，从容与强大。另外，没有任何事情是需要立刻回应的，特别是您在开车的时候接电话，没有必要承担分神、低头导致事故的风险。以后我也会时常跟您强调的。</p>
+<p>​ 第三，我希望您在新的事业赛道上能够乘风破浪，一往无前。您在事业上一直都是有冲劲、有魄力、有思考的，现在平台电商与工厂生产的模式有了很大的差异，您的精力与十七年前相比也有所衰退，这就需要您更要精准分配、管理自己的时间。上者劳人，中者劳心，下者劳体，您的当务之急是掌握平台的核心理念与模式，总结突出优势与发展定位，分析苏北市场的现状与特点，是否能够移植已有管理经营模式，还是有您优化发挥的空间等。作为刚步入社会的年轻人，这些建议或许肤浅幼稚了些，但也都是儿子所思所想，有机会与您共同研究。</p>
+<p>​ 您的心愿是我能找到另一半，分担您的责任与义务。您又说不能为了任务而妥协，希望我找到一生的挚爱与知己。我知道您是疼我，希望有人能走向我，爱我护我。人海茫茫，遇到便是有缘，未遇到便是期待，在此之前，我们一起静候佳音。</p>
+<p>​ 此致</p>
+<p>敬礼！</p>
+<p>​ 儿：凡</p>
+<p>​ 2022.1.1</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Emotion</tag>
+        <tag>Love</tag>
       </tags>
   </entry>
 </search>
