@@ -187,6 +187,77 @@
       </tags>
   </entry>
   <entry>
+    <title>阴阳师副本业原火-御灵-图像识别</title>
+    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg"></p>
+<span id="more"></span>
+<h1 id="前言">前言</h1>
+<ul>
+<li><p>作为阴阳师的老咸鱼，账号上御灵券与痴券都是以千为单位计算。某天突然想把它们消耗掉的话是不现实的：枯燥的点击与等待让人抓狂</p></li>
+<li><p>御灵券可以用于刷绘卷获得高排名，进而拿到黑蛋、新式神碎片等稀有道具奖励；痴的六星掉率很高，是很好的奉纳资源，还能出双速</p></li>
+<li><p>刷副本的操作逻辑其实非常简单，对于我这种外行来说也是直观明了，每一步的目标和过程都很明确，结合现在图像识别技术，妥妥的能解决。</p></li>
+<li><p>我隔壁工位的另一个组的师兄，做的就是视频中的实时人脸识别与跟踪，成功的应用就是结合温度检测仪在校园里对大家的体温异常进行筛查，后来由于隐私问题改成了定点自主检测。这让我对解决问题有了兴趣与信心</p></li>
+<li><p><strong>强调一下，实现代码的目的是学习与应用，解决过程中遇到各类问题，扩充自身技能，增强执行能力</strong></p></li>
+<li><p>在参考了许多github仓库与blog后，自行编写的代码如下</p></li>
+</ul>
+<h1 id="正文">正文</h1>
+<h3 id="定位阴阳师客户端位置">定位阴阳师客户端位置</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u'阴阳师-网易游戏'</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>实操时发现，得到的四边坐标与真实位置有细微偏差，需要修正</li>
+</ul>
+<h3 id="获取当前阴阳师界面图像">获取当前阴阳师界面图像</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">'img/screenshot.jpg'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="使用open-cv进行图像处理">使用open-cv进行图像处理</h3>
+<h4 id="读取截图">读取截图</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">'img/screenshot.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="提取特征数值">提取特征数值</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="构建匹配模型">构建匹配模型</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="获取满足条件的特征点">获取满足条件的特征点</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>当特征点数量达到阈值，则说明匹配成功</li>
+</ul>
+<h4 id="定位特征点在前后坐标系的位置计算变换矩阵">定位特征点在前后坐标系的位置，计算变换矩阵</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="根据模板四个角的坐标获得可行域">根据模板四个角的坐标获得可行域</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="点击区域内的随机坐标并移动到随机区域">点击区域内的随机坐标，并移动到随机区域</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">'left'</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="总结">总结</h2>
+<ul>
+<li>有了图像识别就不需要像一般科学工具一样卡副本时间，不会遇到翻车情况时盲目点击（业原火现在最稳定的阵容20s，但仍有概率舅妈收尾失败）</li>
+<li>几乎不消耗内存、硬盘读写资源</li>
+<li>不需要考虑阴阳师界面大小，避免了点击区域的界定不准、繁琐的问题</li>
+<li>实测偶然出现变换矩阵为空的情况，添加判断语句避免了最后的翻车点</li>
+<li>完整代码就不放出来了，请自行探索、整理、编写</li>
+<li>有问题欢迎交流，祝大家游戏愉快，练度飞升～</li>
+</ul>
+<h3 id="模板示例">模板示例</h3>
+<ul>
+<li>目标图样</li>
+</ul>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg"></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg"></p>
+<ul>
+<li>截图</li>
+</ul>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg"></p>
+]]></content>
+      <categories>
+        <category>Game</category>
+      </categories>
+      <tags>
+        <tag>Coding</tag>
+        <tag>Self-Learning</tag>
+        <tag>阴阳师</tag>
+        <tag>图像识别</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阴阳师从零开始肝新区</title>
     <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</url>
     <content><![CDATA[<h1 id="预约抽卡">预约抽卡</h1>
@@ -390,77 +461,6 @@
       <tags>
         <tag>攻略</tag>
         <tag>阴阳师</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阴阳师副本业原火-御灵-图像识别</title>
-    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg"></p>
-<span id="more"></span>
-<h1 id="前言">前言</h1>
-<ul>
-<li><p>作为阴阳师的老咸鱼，账号上御灵券与痴券都是以千为单位计算。某天突然想把它们消耗掉的话是不现实的：枯燥的点击与等待让人抓狂</p></li>
-<li><p>御灵券可以用于刷绘卷获得高排名，进而拿到黑蛋、新式神碎片等稀有道具奖励；痴的六星掉率很高，是很好的奉纳资源，还能出双速</p></li>
-<li><p>刷副本的操作逻辑其实非常简单，对于我这种外行来说也是直观明了，每一步的目标和过程都很明确，结合现在图像识别技术，妥妥的能解决。</p></li>
-<li><p>我隔壁工位的另一个组的师兄，做的就是视频中的实时人脸识别与跟踪，成功的应用就是结合温度检测仪在校园里对大家的体温异常进行筛查，后来由于隐私问题改成了定点自主检测。这让我对解决问题有了兴趣与信心</p></li>
-<li><p><strong>强调一下，实现代码的目的是学习与应用，解决过程中遇到各类问题，扩充自身技能，增强执行能力</strong></p></li>
-<li><p>在参考了许多github仓库与blog后，自行编写的代码如下</p></li>
-</ul>
-<h1 id="正文">正文</h1>
-<h3 id="定位阴阳师客户端位置">定位阴阳师客户端位置</h3>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u'阴阳师-网易游戏'</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>实操时发现，得到的四边坐标与真实位置有细微偏差，需要修正</li>
-</ul>
-<h3 id="获取当前阴阳师界面图像">获取当前阴阳师界面图像</h3>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">'img/screenshot.jpg'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="使用open-cv进行图像处理">使用open-cv进行图像处理</h3>
-<h4 id="读取截图">读取截图</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">'img/screenshot.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="提取特征数值">提取特征数值</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="构建匹配模型">构建匹配模型</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="获取满足条件的特征点">获取满足条件的特征点</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>当特征点数量达到阈值，则说明匹配成功</li>
-</ul>
-<h4 id="定位特征点在前后坐标系的位置计算变换矩阵">定位特征点在前后坐标系的位置，计算变换矩阵</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="根据模板四个角的坐标获得可行域">根据模板四个角的坐标获得可行域</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="点击区域内的随机坐标并移动到随机区域">点击区域内的随机坐标，并移动到随机区域</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">'left'</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="总结">总结</h2>
-<ul>
-<li>有了图像识别就不需要像一般科学工具一样卡副本时间，不会遇到翻车情况时盲目点击（业原火现在最稳定的阵容20s，但仍有概率舅妈收尾失败）</li>
-<li>几乎不消耗内存、硬盘读写资源</li>
-<li>不需要考虑阴阳师界面大小，避免了点击区域的界定不准、繁琐的问题</li>
-<li>实测偶然出现变换矩阵为空的情况，添加判断语句避免了最后的翻车点</li>
-<li>完整代码就不放出来了，请自行探索、整理、编写</li>
-<li>有问题欢迎交流，祝大家游戏愉快，练度飞升～</li>
-</ul>
-<h3 id="模板示例">模板示例</h3>
-<ul>
-<li>目标图样</li>
-</ul>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg"></p>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg"></p>
-<ul>
-<li>截图</li>
-</ul>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg"></p>
-]]></content>
-      <categories>
-        <category>Game</category>
-      </categories>
-      <tags>
-        <tag>Coding</tag>
-        <tag>Self-Learning</tag>
-        <tag>阴阳师</tag>
-        <tag>图像识别</tag>
       </tags>
   </entry>
   <entry>
@@ -696,25 +696,6 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       </tags>
   </entry>
   <entry>
-    <title>华为日记（一）</title>
-    <url>/2021/11/29/%E5%8D%8E%E4%B8%BA%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<p>今天下午40名左右的新员工参加的在东莞华为三丫坡的入职开班活动，大家分了组，认识了来自五湖四海的新朋友，也在寻找单身、最小年龄、喜欢旅游等各种标签指引下，打破了心理的障壁。晚上大家进行了小组蒙眼障碍前进，在这个活动中，我对许多名词有了新的深刻的认识：信任、责任、风险控制、团队协作、解决方案。</p>
-<span id="more"></span>
-<p>当我的视力被剥夺，只能用双手感受前方队友的肢体动作，那么要完成跨越障碍、上下楼梯、下蹲避障等动作，我就必须无条件相信他的所有行为。如果我犹豫或者怀疑，导致我中途停顿几秒，那么我可能会脱离他的引导，对下面的动作做出个人的误判，从而导致任务失败。</p>
-<p>在我身后，有未知数量的队友，他们也无条件信任我的行为，可以说我肩负着后方人员的安危，我有艰巨的责任将前方发出指令正确接收并合理传递下去，中间我有几次紧张到刚一收到信号就做出反应，后方的队友还未到达指定位置，我为团队捏了一把冷汗。</p>
-<p>中途我们在毫无征兆的情况下，更换了所有的队员，大家准备的信号与指示各不相同，一下子打乱了所有人的思绪，我也确实自此从未接受到前方新队员的任何指引，一切都是小心翼翼，幸运的是我是末尾的队员，负担减轻了许多。在这种危机风险下，大家几乎是各凭本能地在做出动作，再没有任何合作可言。我曾心里想过建议所有人都按照同一指令，但是又考虑可能有团队奖励，就错过了发声的机会。</p>
-<p>最后就是解决方案，当我们接到任务的时候，规则简单易懂，但是过程中可能会遇到的问题却完全没有头绪。大家头脑风暴后，渐渐有了一些思路，形成了泛化的、简易的、多场景的信号指引，不再具体为转多少度角、下蹲高度的一致性这种问题增添操作的复杂度。</p>
-<p>总的来说，半个小时的活动，打破了我自己的心墙，认识了好多友好的新朋友，我为以后能成为他们的一份子而自豪，当然我也要更加努力，争做先锋。</p>
-]]></content>
-      <categories>
-        <category>Huawei Diary</category>
-      </categories>
-      <tags>
-        <tag>Sharing</tag>
-        <tag>Experience</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《性张力下的中国人》</title>
     <url>/2021/11/09/%E3%80%8A%E6%80%A7%E5%BC%A0%E5%8A%9B%E4%B8%8B%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA%E3%80%8B/</url>
     <content><![CDATA[<h2 id="中国传统文化中性问题对立的两极">中国传统文化中性问题对立的两极</h2>
@@ -810,6 +791,25 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       <tags>
         <tag>Reading</tag>
         <tag>大开眼界</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华为日记（一）</title>
+    <url>/2021/11/29/%E5%8D%8E%E4%B8%BA%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p>今天下午40名左右的新员工参加的在东莞华为三丫坡的入职开班活动，大家分了组，认识了来自五湖四海的新朋友，也在寻找单身、最小年龄、喜欢旅游等各种标签指引下，打破了心理的障壁。晚上大家进行了小组蒙眼障碍前进，在这个活动中，我对许多名词有了新的深刻的认识：信任、责任、风险控制、团队协作、解决方案。</p>
+<span id="more"></span>
+<p>当我的视力被剥夺，只能用双手感受前方队友的肢体动作，那么要完成跨越障碍、上下楼梯、下蹲避障等动作，我就必须无条件相信他的所有行为。如果我犹豫或者怀疑，导致我中途停顿几秒，那么我可能会脱离他的引导，对下面的动作做出个人的误判，从而导致任务失败。</p>
+<p>在我身后，有未知数量的队友，他们也无条件信任我的行为，可以说我肩负着后方人员的安危，我有艰巨的责任将前方发出指令正确接收并合理传递下去，中间我有几次紧张到刚一收到信号就做出反应，后方的队友还未到达指定位置，我为团队捏了一把冷汗。</p>
+<p>中途我们在毫无征兆的情况下，更换了所有的队员，大家准备的信号与指示各不相同，一下子打乱了所有人的思绪，我也确实自此从未接受到前方新队员的任何指引，一切都是小心翼翼，幸运的是我是末尾的队员，负担减轻了许多。在这种危机风险下，大家几乎是各凭本能地在做出动作，再没有任何合作可言。我曾心里想过建议所有人都按照同一指令，但是又考虑可能有团队奖励，就错过了发声的机会。</p>
+<p>最后就是解决方案，当我们接到任务的时候，规则简单易懂，但是过程中可能会遇到的问题却完全没有头绪。大家头脑风暴后，渐渐有了一些思路，形成了泛化的、简易的、多场景的信号指引，不再具体为转多少度角、下蹲高度的一致性这种问题增添操作的复杂度。</p>
+<p>总的来说，半个小时的活动，打破了我自己的心墙，认识了好多友好的新朋友，我为以后能成为他们的一份子而自豪，当然我也要更加努力，争做先锋。</p>
+]]></content>
+      <categories>
+        <category>Huawei Diary</category>
+      </categories>
+      <tags>
+        <tag>Sharing</tag>
+        <tag>Experience</tag>
       </tags>
   </entry>
   <entry>
@@ -945,6 +945,27 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       <tags>
         <tag>Emotion</tag>
         <tag>Love</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《开端》</title>
+    <url>/2022/02/08/%E3%80%8A%E5%BC%80%E7%AB%AF%E3%80%8B/</url>
+    <content><![CDATA[<p>​ 如果这个剧的长度由15集缩短到10集，那观感会好很多，评分会给到8分，现在我给7分。</p>
+<span id="more"></span>
+<p>​ 整部剧最大的疑问就是男女主为什么会认为循环会不断发生。我认为未知是常人面对的最大的恐惧，比死亡更加可怕。男女主一次次尝试时，感觉不到他们对死亡或者爆炸发生后陷入未知的恐惧。</p>
+<p>​ 我最喜欢的场景就是几次待机状态时，回转餐厅上流动的玩具公交车，昏黄的光线加上旋转远近的镜头，给人一种迷幻、错乱的感觉。第二次是在车上，冰冷的蓝光给人在睡梦中的冻结感，又加上朦胧的塑料布遮挡，非常还原我们平时做梦时想看清又永远无法看清的焦虑。而这些时刻与场景在剧集中毫无作用，我感到十分费解。</p>
+<p>​ 我本以为男主的身份对破解循环有所帮助，但其实毫无作用。唯一说得上的作用就是告诉观众，他有很强的技术，曾经独断专行，不负责任，而在一次次循环中，他获得了成长。男主存在的价值与女主完全就是一男一女的搭档关系，换成任何其他的性别、工作，都不影响循环的成立。</p>
+<p>​ 车上的两位乘客算是纯凑数的，一个是热心的药罐子大妈，一个是心比手小的蹦极教练。他们作为路人，表现了正常的路人行为，小事凑一凑，大事看一看，事故来临时木僵反应表现的地淋漓尽致。卢笛作为第一个被查的人，也是车上唯一一个完全信任男女主的人，从始至终表现了一个阳光热心的青年形象。他与父亲的和解也算是整部剧里的第一个小泪点。第二个是远道而来给儿子送西瓜的老农，对他产生怀疑的一个原因是因为蛇皮袋，另一个是因为他出现在一哥视频里的微笑。老农一直小心翼翼，唯唯诺诺，生怕给人添了麻烦，是一个犯过错却勇敢前行的人。我特别反感一哥这种人，为人处事毫无距离概念，盯着别人的事情一顿说教，还偷拍别人，大言不惭地说自己录下来有证据，打起架来只会在最后，歹徒被制服了才最后抱个腿。在生活里，我对这种人也是敬而远之，他们轻易下结论、做判断，有一套自己的行为准则，不知道什么时候就被他们喜欢或讨厌。老焦是车上我最熟悉、也是最心疼的那类人，他们一直踏实工作，忍辱负重，努力想把生活变个样子，有可爱但不怎么听话的孩子，为孩子好却不知道怎么和孩子沟通，动不动就家长脾气与作风，有些什么自认为好的、别人说好的东西就攒着、捂着，他们的血肉构建了城市的钢筋铁骨。</p>
+<p>​ 王兴德与陶映红夫妇失独，他们经受了巨大的精神折磨，一方面来自案件的草草了事，一方面来自网络的暴力。在这个循环往复的折磨中，他们逐渐失去了活下去的希望与动力。但是我只痛心于他们的遭遇，却不能接受他们引爆公交车进而一家人团聚的行为。陶映红几年来一直渴望知道萌萌为什么下车，但是公交车爆炸后，其他遇难者的家属会不会一直渴望知道他们为什么要炸车，他们的女儿莫名其妙地死掉了，其他乘客也因为他们莫名其妙地死掉了，这就是又一个悲剧的循环。陶映红一开始就判断萌萌在车上遇到了色狼，他们就抓着这个点不放，在45路车上找色狼，在询问女生受到拒绝后，在警察面前情绪失控我觉得应该是多日积累的爆发。我努力沉浸在剧情中，但确实无法带入那种歇斯底里的绝望，那种想要继续走下去又觉得自己不能放下的两难。</p>
+<p>​ 嗯最最最无语的点，公安局副局长老杜每个循环都一副认真思考，老娘很专业的样子，结果啥忙帮不上，就会说一句，对外我来负责，准备药检。可能她是搞笑担当。然后最气人的点就是那些弹幕了，可能是我看过的鬼畜与B站的弹幕比较正常，我很难想象做交通事故鬼畜的初衷，真的是素材不够了么，而那些让我专门暂停看的弹幕感觉大部分都是为了气人而写的。《我们与恶的距离》中也同样展现了陌生人对陌生人的恶意，但是我不清楚为什么我就能一定程度上接受那种现象。</p>
+<p>​ 总体来讲，全剧保持了一定的节奏与人物的立体，循环框架比源代码、蝴蝶效应等差了点意思，经典推理排除凶手也是中规中矩，年轻演员的演技还过关，比不上前辈，剧情间有笑点有泪点。</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Sharing</tag>
+        <tag>TV Series</tag>
       </tags>
   </entry>
 </search>
