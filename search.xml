@@ -187,77 +187,6 @@
       </tags>
   </entry>
   <entry>
-    <title>阴阳师副本业原火-御灵-图像识别</title>
-    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg"></p>
-<span id="more"></span>
-<h1 id="前言">前言</h1>
-<ul>
-<li><p>作为阴阳师的老咸鱼，账号上御灵券与痴券都是以千为单位计算。某天突然想把它们消耗掉的话是不现实的：枯燥的点击与等待让人抓狂</p></li>
-<li><p>御灵券可以用于刷绘卷获得高排名，进而拿到黑蛋、新式神碎片等稀有道具奖励；痴的六星掉率很高，是很好的奉纳资源，还能出双速</p></li>
-<li><p>刷副本的操作逻辑其实非常简单，对于我这种外行来说也是直观明了，每一步的目标和过程都很明确，结合现在图像识别技术，妥妥的能解决。</p></li>
-<li><p>我隔壁工位的另一个组的师兄，做的就是视频中的实时人脸识别与跟踪，成功的应用就是结合温度检测仪在校园里对大家的体温异常进行筛查，后来由于隐私问题改成了定点自主检测。这让我对解决问题有了兴趣与信心</p></li>
-<li><p><strong>强调一下，实现代码的目的是学习与应用，解决过程中遇到各类问题，扩充自身技能，增强执行能力</strong></p></li>
-<li><p>在参考了许多github仓库与blog后，自行编写的代码如下</p></li>
-</ul>
-<h1 id="正文">正文</h1>
-<h3 id="定位阴阳师客户端位置">定位阴阳师客户端位置</h3>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u'阴阳师-网易游戏'</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>实操时发现，得到的四边坐标与真实位置有细微偏差，需要修正</li>
-</ul>
-<h3 id="获取当前阴阳师界面图像">获取当前阴阳师界面图像</h3>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">'img/screenshot.jpg'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="使用open-cv进行图像处理">使用open-cv进行图像处理</h3>
-<h4 id="读取截图">读取截图</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">'img/screenshot.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="提取特征数值">提取特征数值</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="构建匹配模型">构建匹配模型</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="获取满足条件的特征点">获取满足条件的特征点</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>当特征点数量达到阈值，则说明匹配成功</li>
-</ul>
-<h4 id="定位特征点在前后坐标系的位置计算变换矩阵">定位特征点在前后坐标系的位置，计算变换矩阵</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="根据模板四个角的坐标获得可行域">根据模板四个角的坐标获得可行域</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="点击区域内的随机坐标并移动到随机区域">点击区域内的随机坐标，并移动到随机区域</h4>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">'left'</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="总结">总结</h2>
-<ul>
-<li>有了图像识别就不需要像一般科学工具一样卡副本时间，不会遇到翻车情况时盲目点击（业原火现在最稳定的阵容20s，但仍有概率舅妈收尾失败）</li>
-<li>几乎不消耗内存、硬盘读写资源</li>
-<li>不需要考虑阴阳师界面大小，避免了点击区域的界定不准、繁琐的问题</li>
-<li>实测偶然出现变换矩阵为空的情况，添加判断语句避免了最后的翻车点</li>
-<li>完整代码就不放出来了，请自行探索、整理、编写</li>
-<li>有问题欢迎交流，祝大家游戏愉快，练度飞升～</li>
-</ul>
-<h3 id="模板示例">模板示例</h3>
-<ul>
-<li>目标图样</li>
-</ul>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg"></p>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg"></p>
-<ul>
-<li>截图</li>
-</ul>
-<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg"></p>
-]]></content>
-      <categories>
-        <category>Game</category>
-      </categories>
-      <tags>
-        <tag>Coding</tag>
-        <tag>Self-Learning</tag>
-        <tag>阴阳师</tag>
-        <tag>图像识别</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>阴阳师从零开始肝新区</title>
     <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%82%9D%E6%96%B0%E5%8C%BA/</url>
     <content><![CDATA[<h1 id="预约抽卡">预约抽卡</h1>
@@ -461,6 +390,77 @@
       <tags>
         <tag>攻略</tag>
         <tag>阴阳师</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阴阳师副本业原火-御灵-图像识别</title>
+    <url>/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="终于解放双手"><del>终于解放双手</del></h1>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/效果2.jpg"></p>
+<span id="more"></span>
+<h1 id="前言">前言</h1>
+<ul>
+<li><p>作为阴阳师的老咸鱼，账号上御灵券与痴券都是以千为单位计算。某天突然想把它们消耗掉的话是不现实的：枯燥的点击与等待让人抓狂</p></li>
+<li><p>御灵券可以用于刷绘卷获得高排名，进而拿到黑蛋、新式神碎片等稀有道具奖励；痴的六星掉率很高，是很好的奉纳资源，还能出双速</p></li>
+<li><p>刷副本的操作逻辑其实非常简单，对于我这种外行来说也是直观明了，每一步的目标和过程都很明确，结合现在图像识别技术，妥妥的能解决。</p></li>
+<li><p>我隔壁工位的另一个组的师兄，做的就是视频中的实时人脸识别与跟踪，成功的应用就是结合温度检测仪在校园里对大家的体温异常进行筛查，后来由于隐私问题改成了定点自主检测。这让我对解决问题有了兴趣与信心</p></li>
+<li><p><strong>强调一下，实现代码的目的是学习与应用，解决过程中遇到各类问题，扩充自身技能，增强执行能力</strong></p></li>
+<li><p>在参考了许多github仓库与blog后，自行编写的代码如下</p></li>
+</ul>
+<h1 id="正文">正文</h1>
+<h3 id="定位阴阳师客户端位置">定位阴阳师客户端位置</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">windowOnmyoji = win32gui.FindWindow(<span class="number">0</span>,<span class="string">u'阴阳师-网易游戏'</span>)</span><br><span class="line">left, top, right, bottom = win32gui.GetWindowRect(windowOnmyoji)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>实操时发现，得到的四边坐标与真实位置有细微偏差，需要修正</li>
+</ul>
+<h3 id="获取当前阴阳师界面图像">获取当前阴阳师界面图像</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># set screenshot range</span></span><br><span class="line">img_ready = ImageGrab.grab((x1, y1, x2, y2))</span><br><span class="line"><span class="comment"># save screenshot</span></span><br><span class="line">img_ready.save(<span class="string">'img/screenshot.jpg'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="使用open-cv进行图像处理">使用open-cv进行图像处理</h3>
+<h4 id="读取截图">读取截图</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># transform from PIL to CV2</span></span><br><span class="line">target = cv2.imread(<span class="string">'img/screenshot.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract feature values</span></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="提取特征数值">提取特征数值</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp_start, des_start = sift.detectAndCompute(template_start, <span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="构建匹配模型">构建匹配模型</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># match model construction</span></span><br><span class="line">flann = cv2.FlannBasedMatcher(indexParams, searchParams)</span><br><span class="line">matches_start = flann.knnMatch(des_start, des_target, k = <span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="获取满足条件的特征点">获取满足条件的特征点</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Determine whether the screenshot is consistent with the sample</span></span><br><span class="line"><span class="comment"># Count the number of matching feature points, 0.7 is the general ratio</span></span><br><span class="line">good_start = []</span><br><span class="line"><span class="keyword">for</span> m, n <span class="keyword">in</span> matches_start:</span><br><span class="line">    <span class="keyword">if</span> m.distance &lt; <span class="number">0.7</span> * n.distance:</span><br><span class="line">        good_start.append(m)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>当特征点数量达到阈值，则说明匹配成功</li>
+</ul>
+<h4 id="定位特征点在前后坐标系的位置计算变换矩阵">定位特征点在前后坐标系的位置，计算变换矩阵</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">src_pts = np.float32([kp_start[m.queryIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">dst_pts = np.float32([kp_target[m.trainIdx].pt <span class="keyword">for</span> m <span class="keyword">in</span> good_start]).reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, <span class="number">5.0</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="根据模板四个角的坐标获得可行域">根据模板四个角的坐标获得可行域</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.perspectiveTransform(pts, M)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">0</span>] += left</span><br><span class="line">  dst[i][<span class="number">0</span>][<span class="number">1</span>] += top</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="点击区域内的随机坐标并移动到随机区域">点击区域内的随机坐标，并移动到随机区域</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">random_x = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">0</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>])))</span><br><span class="line">random_y = random.randint(<span class="built_in">int</span>(<span class="built_in">max</span>(dst[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">3</span>][<span class="number">0</span>][<span class="number">1</span>])),<span class="built_in">int</span>(<span class="built_in">min</span>(dst[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>],dst[<span class="number">2</span>][<span class="number">0</span>][<span class="number">1</span>])))</span><br><span class="line">pyautogui.moveTo(random_x,random_y,</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br><span class="line">pyautogui.click(button = <span class="string">'left'</span>,\</span><br><span class="line">                interval=random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>),\</span><br><span class="line">                clicks=random.randint(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Move to a random location after clicking</span></span><br><span class="line">pyautogui.moveTo(random.randint(<span class="number">0</span>,<span class="number">3000</span>),\</span><br><span class="line">                 random.randint(<span class="number">0</span>,<span class="number">2000</span>),\</span><br><span class="line">                 random.uniform(<span class="number">0.1</span>,<span class="number">0.15</span>))</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="总结">总结</h2>
+<ul>
+<li>有了图像识别就不需要像一般科学工具一样卡副本时间，不会遇到翻车情况时盲目点击（业原火现在最稳定的阵容20s，但仍有概率舅妈收尾失败）</li>
+<li>几乎不消耗内存、硬盘读写资源</li>
+<li>不需要考虑阴阳师界面大小，避免了点击区域的界定不准、繁琐的问题</li>
+<li>实测偶然出现变换矩阵为空的情况，添加判断语句避免了最后的翻车点</li>
+<li>完整代码就不放出来了，请自行探索、整理、编写</li>
+<li>有问题欢迎交流，祝大家游戏愉快，练度飞升～</li>
+</ul>
+<h3 id="模板示例">模板示例</h3>
+<ul>
+<li>目标图样</li>
+</ul>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_fire_start.jpg"></p>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/mikun_end2.jpg"></p>
+<ul>
+<li>截图</li>
+</ul>
+<p><img src="/2021/09/10/%E9%98%B4%E9%98%B3%E5%B8%88%E5%89%AF%E6%9C%AC%E4%B8%9A%E5%8E%9F%E7%81%AB-%E5%BE%A1%E7%81%B5-%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/screenshot.jpg"></p>
+]]></content>
+      <categories>
+        <category>Game</category>
+      </categories>
+      <tags>
+        <tag>Coding</tag>
+        <tag>Self-Learning</tag>
+        <tag>阴阳师</tag>
+        <tag>图像识别</tag>
       </tags>
   </entry>
   <entry>
@@ -966,6 +966,42 @@ This browser does not support PDF files. Please download the PDF to view it: &lt
       <tags>
         <tag>Sharing</tag>
         <tag>TV Series</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《盲山》</title>
+    <url>/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/</url>
+    <content><![CDATA[<p>​ 辛劳的父母，殷切期盼着我能出人头地，供我上大学，以后在大城市里立足，改变命运。我努力学习，终于毕业了，但是没有工作，没有出路，我就像一只蚂蚁随处可见，无足轻重。家里办了助学贷款，弟弟要上大学，我着急还债，一个多月没任何机会，这时候一个衣冠楚楚的经理和漂亮的秘书给近乎绝望的我一根救命稻草，他们是我的老乡，热情地接纳了我。我相信这是上天给我的恩赐，我会努力干活，就算忍气吞声、卑微地活着，于是我的生活就此有了转机。</p>
+<span id="more"></span>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/1.png"></p>
+<p>​ 我们坐了大半天的三轮车来到村里，我要准备好与药农的谈价，尽管什么都不会，但是吴经理和胡姐都会帮我的。我们被村里的一群人围住，男人们用赤裸的目光打量着我俩，我让平静地自己无视他们，女人们窃窃私语着，孩子倒是高兴，打闹着过来见生人。我喝了一杯茶，准备帮他们看包，睁开眼却发现他们都消失了。他们说花了7000块从我家人那里买了我给他儿子做媳妇，那个女人说<strong>嫁谁不是嫁</strong>，不会亏待我。</p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/2.png"></p>
+<p>​ 我十分愤怒，觉得他们不可理喻，我与你们毫无关系，带我来的人消失了， 我肯定要走，你们算什么东西，让我嫁给你儿子。他们不听我说什么，把我关在了屋里，我哭喊也没用，因为他们觉得<strong>喊累了我就不喊了</strong>。</p>
+<p>​ 狗儿子的样子十分麻木，人也长的可怕，夜里他来房间，我十分害怕，用尽全身力气打在他身上，然后我就被绑了起来。第二天，他们办了酒席，孩子们趴在窗户上偷偷看我，我嘴被堵住了没办法出声，他们不理解发生了什么。狗儿子一开始并没有准备用强的，经不住村里其他光棍的嘲讽，<strong>“啥感觉吗？”，“弄没弄还不知道呢。”“弄了？那你说她的奶子大不大？”，“肯定没弄”</strong>，强撑面子过来接近我，给我送吃的。可笑，我看见你就想吐，还吃你给我的东西？但是我也知道如果能说服他放我走，那就最好了。他说还钱就能走，又不是我拿的钱，我钱包身份证都没了，想写信借钱又说我让警察带我走，<strong>他的钱就白花了</strong>。他不知道拐卖妇女是犯法的，要坐牢，他却有理：“<strong>谁娶媳妇不花钱？城里人花钱更多。</strong>”。晚上他又被村里人愚弄了一番，<strong>“没让你上床？不让睡就收拾她。这家伙是不是骗子？现在的人心眼都坏得很，别让她跑了。先办事再说，有娃就跑不了了。”</strong>终于对我用强了，我把他打走，结果狗儿子的爹狗男人居然和狗女人一起把我按住让狗儿子强奸我。</p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/3.png"></p>
+<p>​ 我绝望地挣扎也无力反抗，最终还是被强奸了，狗儿子像个牲口在我身上抽动，我的身体与精神都撕裂了。狗儿子终于弄了个女人，粗暴丑恶的狗儿子现在心里很畅快，走路生风，明天有得和村里人炫耀了。狗男人平静地喝酒，一切在他看来本就理所应当，喝酒抽烟，狗女人还在微弱的灯光下织布。狗日下的女人们，都是狗的精神与肉体的奴隶。</p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/4.png"></p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/5.png"></p>
+<p>​ 我不吃饭，暴怒，希望他们能打死我，门开了我有个机会跑掉。走到村主任那里希望他能主持公道，村主任说我<strong>拿了彩礼还想跑，是骗子</strong>，又让狗儿子拉我回去。这次我被锁住了，吃喝拉撒动不了，蓬头垢面，一身污秽，像猪圈里的猪。我割腕自杀了又被救了回来，为什么我还活着呢？我想死掉，但是我因为这些人死掉，太委屈了，<strong>凭什么我反抗的途径就是死亡，而他们掌握着暴力就随意蹂躏我</strong>。</p>
+<p>​ 一天两天，我逐渐接受了现状，狗女人的辱骂，狗儿子的淫欲，家里的农活。我从不真正妥协，我只是要活下去，因为或者就有跑出去的可能。我开始想尽一切办法，写信让邮递员送走，却一切都被狗儿子看在眼里；我接近那些同样被拐来的妇女，找到了一次逃跑的机会，但是没有三块钱，我又被抓了回去，被打得一身伤。小叔子常来看我，我知道他的意思，但是我只能依靠他，<strong>他叫黄德诚，道德的德，诚信的诚</strong>，但他也只是为了得到我，并不会脱离他们的血亲关系，我对他就值一个份子钱，他也可以选择离开这里。</p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/6.png"></p>
+<p>​ 之前报案的妇女，公安说是家庭纠纷，不管，她就被抓回来打断了腿。 也有生了两个娃的认了命，<strong>“就算是跑出去了，娃儿咋办，也没有男人会要我，哎活着真没有意思。</strong></p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/7.png"></p>
+<p>​ 但是我还是不放弃，我不愿一辈子就在这里接收悲惨的命运，我继续写信，继续接近德诚，尽管他眼中的炽热越来越刺痛我。事发，他离开了，我继续寻找新的途径。我只有肉体，但这也是他们渴望的东西。我有钱了，去了镇上，上了车，眼看就要离开了，司机被狗儿子带人拦住，他本可以不予理睬，但是他又是一个怕事的，反正事不关己，找不到人再开车就行了。他们抓着我，我哭喊着，遇到了警察，我向他求救，他却说我有病看病不要妨碍交通。狗日的破山村，一条垃圾路有个屁交通，这个破车晚走半分钟比我的命更重要。</p>
+<p>​ 我被抓了回去，还是怀了孕。我奋力捶打着肚子，希望它死掉，狗儿子为了保护他的狗种竟然要打我。村里有个孩子和我关系很好，他上进又听话，懂事又可爱，我开始到村里教书。日子一天天过去，我没找到什么合适的机会，肚子却一天天大了起来。村里的池塘又发现了被丢弃的娃娃，我想我可以养他，但是他不是狗儿子的儿子。</p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/8.png"></p>
+<p>​ 我费劲千辛万苦生下了儿子，又开始了新的苦难，他们对我像牛马一样使唤，狗儿子洗头对我呼来喝去，我提着刀走过去，那一刻<strong>我血液里奔流着无尽的愤怒与力量</strong>，一瞬间我的脑海中闪现了各种画面，狗儿子倒在血泊里，我倒在另一个血泊，父亲母亲连我死了都不知道，弟弟他怎么上学，还有我的儿子，他嘹亮的啼哭牵绊着我的心。手中的刀重若千金，我泄了气，转身切菜。</p>
+<p>​ 我的信终于有了回应，公安带着我的父亲来到了我的面前，他是这么的陌生又亲切，他说他是爸爸，我心中对他有一万个抱怨和委屈，他怎么这么久才找到我，他终于找到我了。我们上了警车，那一刻我觉得我终于要逃脱了。没走了两步，警车就被全村人围住。他们嚷嚷着人不能走，要走就得给钱。 <img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/9.png"></p>
+<p>​ 警察中也有和事佬，让我们到村委会去了解情况，他们相信基层管理者的权威与立场，两个人势单力薄需要当地警方的援助，而地方警察必然是不管不问的，那我又落进了深渊，这次还带着父亲。他们打我骂我，渐渐我也忍受得了了，警察走后，主任直接让狗儿子带我出逃，父亲不让狗儿子就打他，村民们都是冷眼旁观，谁掌握了暴力谁就有话语权与支配权，我看着父亲被殴打，发出可悲的求救，我已经知晓了前路的绝望，那就走到了最后的一步，忍无可忍无须再忍了。我拿起刀，吼叫着挥向狗儿子，宣泄着我对命运的反抗。</p>
+<p><img src="/2022/02/19/%E3%80%8A%E7%9B%B2%E5%B1%B1%E3%80%8B/10.png"></p>
+<p>​ 我抬眼看着熟悉的天空，它还是一样明媚，而我却错愕地被世界丢到了理性的边界。</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Sharing</tag>
+        <tag>Movie</tag>
       </tags>
   </entry>
 </search>
